@@ -12,6 +12,48 @@ This project aims to predict heart disease using various health indicators. Earl
 ## Problem Statement
 Heart disease is the leading cause of death globally. Early detection can potentially save lives. We aim to build a machine learning model that can predict the likelihood of heart disease based on various health indicators, contributing to improved healthcare outcomes.
 
+## Project Workflow
+
+### Step 1: Data Collection and Preprocessing
+1. **Collect Data**
+   - [x] Download the dataset from Kaggle.
+   - [ ] Explore the dataset to understand its structure and features.
+   - [ ] Check for missing values and handle them appropriately.
+
+2. **Data Preprocessing**
+   - [ ] Encode categorical variables.
+   - [ ] Normalize or scale numerical features.
+   - [ ] Split the dataset into training and testing sets.
+
+### Step 2: Exploratory Data Analysis (EDA)
+1. **Visualize Data**
+   - [ ] Create histograms, scatter plots, and box plots to explore the distribution of features.
+   - [ ] Generate correlation matrices to identify relationships between variables.
+   - [ ] Analyze trends and patterns in the data.
+
+2. **Feature Engineering**
+   - [ ] Create new features based on domain knowledge.
+   - [ ] Select relevant features for modeling.
+   - [ ] Perform dimensionality reduction if necessary.
+
+### Step 3: Model Building and Evaluation
+1. **Model Selection**
+   - [ ] Choose appropriate machine learning algorithms for the task.
+   - [ ] Train baseline models with default parameters.
+
+2. **Model Evaluation**
+   - [ ] Evaluate models using cross-validation and appropriate metrics.
+   - [ ] Tune hyperparameters to improve model performance.
+
+### Step 4: Model Deployment and Documentation
+1. **Deploy Model**
+   - [ ] Deploy the trained model to a web service or application.
+
+2. **Documentation**
+   - [ ] Document the project's methodology, findings, and conclusions in a report.
+   - [ ] Write README files with instructions for running the code and reproducing results.
+   - [ ] Create API documentation if applicable.
+
 ## Dataset
 The dataset used in this project is sourced from Kaggle and can be found [here](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset/data). It contains 253,680 records and 21 features.
 
@@ -60,10 +102,13 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
 
 ### Local Workflow
 1. **Setup Environment:**
-   - Make sure to use Python 3.10.1.
+   - Make sure to use [Python 3.10.1]("https://www.python.org/downloads/release/python-3101/").
    - Configure a Python environment:
+   Run each command, one after the other.
      ```bash
      python -m venv venv
+     ```
+     ```bash
      .\venv\Scripts\activate
      ```
 2. **Install Dependencies:**
@@ -72,4 +117,4 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
      pip install -r requirements.txt
      ```
 3. **Make Changes to the Notebook:**
-   - Make your changes and commit them.
+   - Make your changes, commit & push them.
