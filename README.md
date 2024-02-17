@@ -86,6 +86,7 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
    - Go to Google Colab and sign in with your Google account if you haven't already.
 2. **Open a Notebook from GitHub:**
    - Click on "File" > "Open notebook" > "GitHub".
+   - Check "Include private repos" top right.
    - Enter the URL of your GitHub repository "https://github.com/kaidalisohaib/AICohortW24" in the provided field.
    - Select the notebook you want to open from the repository.
    - The notebook will open in Google Colab.
@@ -95,7 +96,7 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
    - Once you've made your changes, click on "File" > "Save a copy in GitHub".
    - Authenticate with GitHub if prompted by providing your username and password or personal access token.
    - Choose the repository where you want to save the notebook.
-   - Enter a commit message describing your changes.
+   - Choose the correct branch and enter a commit message describing your changes.
    - Click on "OK" to save the notebook to your GitHub repository.
 5. **Verify Changes on GitHub:**
    - Go to your GitHub repository to verify that the changes have been saved successfully.
