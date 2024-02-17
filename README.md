@@ -103,7 +103,7 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
 
 ### Local Workflow
 1. **Setup Environment:**
-   - Make sure to use [Python 3.10.1]("https://www.python.org/downloads/release/python-3101/").
+   - Make sure to use [Python 3.10.1](https://www.python.org/downloads/release/python-3101/).
    - Configure a Python environment:
    Run each command, one after the other.
      ```bash
