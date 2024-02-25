@@ -17,8 +17,8 @@ Heart disease is the leading cause of death globally. Early detection can potent
 ### Step 1: Data Collection and Preprocessing
 1. **Collect Data**
    - [x] Download the dataset from Kaggle.
-   - [ ] Explore the dataset to understand its structure and features.
-   - [ ] Check for missing values and handle them appropriately.
+   - [X] Explore the dataset to understand its structure and features.
+   - [X] Check for missing values and handle them appropriately.
 
 2. **Data Preprocessing**
    - [ ] Encode categorical variables.
