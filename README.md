@@ -21,28 +21,26 @@ Heart disease is the leading cause of death globally. Early detection can potent
    - [X] Check for missing values and handle them appropriately.
 
 2. **Data Preprocessing**
-   - [ ] Encode categorical variables.
-   - [ ] Normalize or scale numerical features.
-   - [ ] Split the dataset into training and testing sets.
+   - [x] Normalize or scale numerical features.
+   - [x] Split the dataset into training and testing sets.
 
 ### Step 2: Exploratory Data Analysis (EDA)
 1. **Visualize Data**
-   - [ ] Create histograms, scatter plots, and box plots to explore the distribution of features.
-   - [ ] Generate correlation matrices to identify relationships between variables.
-   - [ ] Analyze trends and patterns in the data.
+   - [x] Create histograms, scatter plots, and box plots to explore the distribution of features.
+   - [x] Generate correlation matrices to identify relationships between variables.
+   - [x] Analyze trends and patterns in the data.
 
 2. **Feature Engineering**
-   - [ ] Create new features based on domain knowledge.
-   - [ ] Select relevant features for modeling.
-   - [ ] Perform dimensionality reduction if necessary.
+   - [x] Select relevant features for modeling.
+   - [x] Perform dimensionality reduction if necessary.
 
 ### Step 3: Model Building and Evaluation
 1. **Model Selection**
-   - [ ] Choose appropriate machine learning algorithms for the task.
-   - [ ] Train baseline models with default parameters.
+   - [x] Choose appropriate machine learning algorithms for the task.
+   - [x] Train baseline models with default parameters.
 
 2. **Model Evaluation**
-   - [ ] Evaluate models using cross-validation and appropriate metrics.
+   - [x] Evaluate models using cross-validation and appropriate metrics.
    - [ ] Tune hyperparameters to improve model performance.
 
 ### Step 4: Model Deployment and Documentation
@@ -51,7 +49,7 @@ Heart disease is the leading cause of death globally. Early detection can potent
 
 2. **Documentation**
    - [ ] Document the project's methodology, findings, and conclusions in a report.
-   - [ ] Write README files with instructions for running the code and reproducing results.
+   - [x] Write README files with instructions for running the code and reproducing results.
    - [ ] Create API documentation if applicable.
 
 ## Dataset
