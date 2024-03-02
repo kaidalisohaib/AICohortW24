@@ -1,4 +1,5 @@
 notebooks/cache/
+models/**/*_rf_*.onnx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
