@@ -1,0 +1,37 @@
+
+
+html * {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Apply styles for the main element */
+main {
+    margin: 0 auto; /* Center main element horizontally */
+    padding: 20px; /* Add padding for spacing */
+    /* background-color: #f9f9f9; Set background color */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); Add box shadow for depth */
+    transition: width 0.5s ease; /* Add transition effect for width changes */
+    max-width: 800px; /* Set maximum width for larger screens */
+    font-size: 22px;
+}
+
+
+
+/* Apply styles when the viewport width is less than or equal to 768px */
+@media screen and (max-width: 769px) {
+    main {
+        width: 90%; /* Set main element width to 90% */
+    }
+}
+
+/* Apply styles when the viewport width is greater than 768px */
+@media screen and (min-width: 770px) {
+    main {
+        width: 70%; /* Set main element width to 70% */
+    }
+}

@@ -1,12 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONNX Runtime JavaScript examples: Quick Start - Web (using script tag)</title>
-    <script type="module" src=".\\js-css\\prediction.js"></script>
+    <title>ONNX Runtime JavaScript Examples</title>
+    <link rel="stylesheet" href="./js-css/styles.css">
+    <script type="module" src="./js-css/prediction.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Project Report: Predicting Heart Disease with Machine Learning</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Our Journey:</h2>
+            <p>
+                Our team, a mix of curious minds from Vanier College, embarked on a remarkable adventure: using AI to
+                fight
+                against the ever-present threat of heart disease. While one teammate brought some experience with Python
+                and a
+                taste of the exciting world of AI, the rest of us - two science enthusiasts, one specializing in health
+                sciences, and another diving into computer science and mathematics - were driven by a powerful
+                combination of
+                curiosity and the desire to learn and contribute through teamwork.
+            </p>
+            <p>
+                We were all eager to explore this uncharted territory, excited to understand how AI could be used for
+                good, and
+                passionate about leaving a positive impact on the world.
+            </p>
+        </section>
+
+        <section>
+            <h2>Step 1: Data Acquisition and Preparation</h2>
+            <p>
+                Our first mission on this AI adventure was to hunt down some data. We scoured the web, places like
+                Kaggle, for
+                publicly available datasets related to healthcare or finance. The goal? Find the building blocks for our
+                machine
+                learning model.
+            </p>
+            <p>
+                But, the data gods smiled upon us! As we were digging, we stumbled upon a goldmine: a dataset
+                specifically
+                focused on heart disease patients. Even better, this dataset was already prepped and polished - minimal
+                cleaning
+                needed! Unlike other datasets we'd seen, this one was free of missing pieces, inconsistencies, or
+                formatting
+                headaches. No wrestling with messy data for us! This lucky find meant we could skip the data cleaning
+                grind and
+                head straight into understanding the dataset and building our cool model.
+            </p>
+        </section>
+
+        <section>
+            <h2>Step 2: Understanding the Problem and Tools</h2>
+            <h3>Heart Disease: A Global Foe</h3>
+
+            <p>
+                Our journey began by taking a deep dive into the heartbreaking impact of heart disease worldwide. We
+                learned
+                about its alarmingly high prevalence, the risk factors that contribute to it, and the immense burden it
+                places
+                on individuals, families, and healthcare systems. This understanding fueled our passion to explore the
+                potential
+                of Artificial Intelligence (AI) and Machine Learning (ML) in tackling this critical issue.
+            </p>
+
+            <h3>Leveling Up Our Skills</h3>
+
+            <p>
+                Our team was a diverse mix of individuals with varying levels of experience in AI and programming.
+                Recognizing
+                this, I, with my prior knowledge, took on the role of a supportive guide to facilitate the learning
+                process
+                for
+                everyone. I directed the team towards a series of engaging video tutorials covering the essentials:
+                Python
+                programming, scikit-learn, and Git & GitHub Desktop. These resources served a dual purpose: providing a
+                solid
+                foundation in these crucial topics and equipping us with the necessary tools for seamless collaboration
+                and
+                efficient version control.
+            </p>
+
+            <h3>Delving Deep into the Data</h3>
+
+            <p>
+                To further unravel the mysteries within the dataset, we actively participated in our AI cohort workshop
+                sessions. Through interactive exercises and thought-provoking discussions, we gained valuable insights
+                into
+                data
+                visualization techniques, descriptive statistics, and pattern identification. These exploratory
+                endeavors
+                allowed us to peel back the layers of the dataset, laying a strong foundation for the analysis and model
+                development stages that lay ahead.
+            </p>
+
+            <h3>Unveiling a Bias</h3>
+
+            <p>
+                However, during our data exploration, we stumbled upon a critical challenge: the dataset exhibited class
+                imbalance. This means that for our binary classification problem (predicting the presence or absence of
+                heart
+                disease), a whopping 90% of the data belonged to the "no heart disease" class (target value of 0.0),
+                while
+                only
+                10% belonged to the "heart disease" class (target value of 1.0). This uneven distribution presented a
+                potential
+                roadblock, as our model might perform less effectively in identifying positive cases (heart disease) due
+                to
+                its
+                overexposure to negative examples. Recognizing this bias early on allowed us to strategize mitigation
+                techniques
+                and ensure a more robust and reliable model.
+            </p>
+        </section>
+
+        <strong>### STOPPED HERE, NEED TO CONTINUE EXPLAINING</strong>
+        <section>
+            <h2>Step 3: Building and Training our Model</h2>
+
+            Armed with clean data and basic scikit-learn knowledge, we ventured into model building. We experimented
+            with
+            various ML algorithms, such as Logistic Regression and Random Forest, to predict heart disease presence.
+            Training our chosen model involved feeding it prepared data, allowing it to learn complex relationships
+            between
+            factors and heart disease.
+        </section>
+
+        <section>
+            <h2>Step 4: Evaluation and Refinement</h2>
+
+            Like mastering any skill, building an ML model requires evaluation and refinement. We used metrics like
+            accuracy, precision, and recall to assess our model's performance. Iteratively refining the model involved
+            tweaking parameters, adjusting pre-processing techniques, and exploring alternative algorithms.
+        </section>
+
+        <section>
+            <h2>Step 5: Ethical Considerations</h2>
+
+            As our understanding of AI deepened, so did our awareness of ethical considerations. We learned about the
+            potential biases embedded in data and algorithms, leading to unfair results. To address this, we carefully
+            selected our initial data source and implemented bias mitigation techniques during model training.
+            Transparency
+            and continuous monitoring were emphasized to ensure fairness and responsibility.
+        </section>
+
+        <section>
+            <h2>Step 6: Conclusion and Future Steps</h2>
+
+            This project has been a profound learning experience. We transitioned from novices to proficient users of
+            Python, scikit-learn, and ML concepts. More importantly, we recognized the transformative potential of AI in
+            healthcare and the importance of responsible development. Moving forward, we are eager to explore advanced
+            AI
+            techniques, delve deeper into healthcare data analysis, and advocate for ethical AI solutions to benefit
+            society.
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
