@@ -30,13 +30,13 @@ async function main(featuresArray) {
 
         console.log('output_label', results.label.data)
         console.log('output_probability', results.output.data)
-        document.write("Input: ", dataInput)
-        document.write(`Prediction: ${results.label.data[0]}`)
+        // document.write("Input: ", dataInput)
+        // document.write(`Prediction: ${results.label.data[0]}`)
 
     } catch (e) {
-        document.write(`failed to inference ONNX model: ${e}.`);
+        // document.write(`failed to inference ONNX model: ${e}.`);
     }
 }
 
-input = [1., 1., 1., 40., 1., 0., 0., 0., 0., 1., 0., 1., 0., 5., 18., 15., 1., 0., 9., 4., 3.]
+let input = [1., 1., 1., 40., 1., 0., 0., 0., 0., 1., 0., 1., 0., 5., 18., 15., 1., 0., 9., 4., 3.]
 main(input);
