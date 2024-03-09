@@ -1,10 +1,8 @@
-// see also advanced usage of importing ONNX Runtime Web:
-// https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/importing_onnxruntime-web
-
 // import ONNXRuntime Web from CDN
-import * as ort from "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/esm/ort.min.js";
+import * as ort from "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/esm/ort.min.js";
+
 // set wasm path override
-ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/";
+ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/";
 ort.env.wasm.numThreads = 1;
 
 const modelUrl = "https://raw.githubusercontent.com/kaidalisohaib/AICohortW24/main/models/best_model.onnx"
@@ -14,8 +12,6 @@ async function main(featuresArray) {
         // create a new session and load the specific model.
         //
         // the model in this example contains a single MatMul node
-        // it has 2 inputs: 'a'(float32, 3x4) and 'b'(float32, 4x3)
-        // it has 1 output: 'c'(float32, 3x3)
         const session = await ort.InferenceSession.create(modelUrl);
 
         // prepare inputs. a tensor need its corresponding TypedArray as data
@@ -34,7 +30,7 @@ async function main(featuresArray) {
         // document.write(`Prediction: ${results.label.data[0]}`)
 
     } catch (e) {
-        // document.write(`failed to inference ONNX model: ${e}.`);
+        console.log(`failed to inference ONNX model: ${e}.`);
     }
 }
 
