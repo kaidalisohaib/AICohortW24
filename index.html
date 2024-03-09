@@ -5,167 +5,426 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONNX Runtime JavaScript Examples</title>
-    <link rel="stylesheet" href="./js-css/styles.css">
+    <!-- <link rel="stylesheet" href="./js-css/styles.css"> -->
     <script type="module" src="./js-css/prediction.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #fff1e0;
+        }
+
+        header {
+            background-color: #451429;
+            /* Rich burgundy */
+            color: #fff;
+            padding: 2rem 0;
+            /* Adjusted padding */
+            text-align: center;
+            margin-bottom: 1rem;
+            /* Added margin for separation */
+        }
+
+        header h1 {
+            margin: 10px;
+            /* Remove default margin for h1 */
+        }
+
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            /* Adjusted margin */
+            padding: 1rem;
+            background-color: #fff1e0;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-link {
+            color: #c95e58 !important;
+            /* Rosy pink for links */
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #ffa036 !important;
+            /* Highlight color when hovered */
+        }
+
+        .nav-link.active {
+            background-color: #ffbe98 !important;
+            /* Highlight color when active */
+        }
+
+        footer {
+            background-color: #451429;
+            /* Rich burgundy */
+            color: #ffffff;
+            padding: 1rem 0;
+            /* Adjusted padding */
+            text-align: center;
+            border-top: 1px solid #fff;
+            /* Added border for separation */
+        }
+
+        footer p {
+            margin: 0;
+            /* Remove default margin for p */
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 10%;
+            height: min-content;
+        }
+
+        h2 {
+            margin-top: 50px;
+        }
+
+        h3 {
+            margin-top: 30px;
+        }
+
+        h3+hr {
+            width: 70%;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #d44934 !important;
+            color: #d44934 !important;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Project Report: Predicting Heart Disease with Machine Learning</h1>
+        <div class="container">
+            <h1>Project Report: Predicting Heart Disease with Machine Learning</h1>
+        </div>
     </header>
-    <main>
-        <section>
-            <h2>Our Journey:</h2>
-            <p>
-                Our team, a mix of curious minds from Vanier College, embarked on a remarkable adventure: using AI to
-                fight
-                against the ever-present threat of heart disease. While one teammate brought some experience with Python
-                and a
-                taste of the exciting world of AI, the rest of us - two science enthusiasts, one specializing in health
-                sciences, and another diving into computer science and mathematics - were driven by a powerful
-                combination of
-                curiosity and the desire to learn and contribute through teamwork.
-            </p>
-            <p>
-                We were all eager to explore this uncharted territory, excited to understand how AI could be used for
-                good, and
-                passionate about leaving a positive impact on the world.
-            </p>
-        </section>
+    <main class="container">
+        <div class="row">
 
-        <section>
-            <h2>Step 1: Data Acquisition and Preparation</h2>
-            <p>
-                Our first mission on this AI adventure was to hunt down some data. We scoured the web, places like
-                Kaggle, for
-                publicly available datasets related to healthcare or finance. The goal? Find the building blocks for our
-                machine
-                learning model.
-            </p>
-            <p>
-                But, the data gods smiled upon us! As we were digging, we stumbled upon a goldmine: a dataset
-                specifically
-                focused on heart disease patients. Even better, this dataset was already prepped and polished - minimal
-                cleaning
-                needed! Unlike other datasets we'd seen, this one was free of missing pieces, inconsistencies, or
-                formatting
-                headaches. No wrestling with messy data for us! This lucky find meant we could skip the data cleaning
-                grind and
-                head straight into understanding the dataset and building our cool model.
-            </p>
-        </section>
+            <div class="col-3">
+                <nav id="navbar-example3" class="flex-column align-items-stretch pe-4 border-end sticky-nav">
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link" href="#item-0">Our Journey</a>
+                        <a class="nav-link" href="#item-1">Data Acquisition and Preparation</a>
+                        <a class="nav-link" href="#item-2">Step 2: Understanding the Problem and Tools</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ms-3 my-1" href="#item-2-1">Heart Disease: A Global Foe</a>
+                            <a class="nav-link ms-3 my-1" href="#item-2-2">Leveling Up Our Skills</a>
+                            <a class="nav-link ms-3 my-1" href="#item-2-3">Delving Deep into the Data</a>
+                            <a class="nav-link ms-3 my-1" href="#item-2-4">Unveiling a Bias</a>
+                        </nav>
+                        <a class="nav-link" href="#item-3">Step 3: Building and Training our Model</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ms-3 my-1" href="#item-3-1">Exploring Machine Learning Algorithms</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-2">Model Training</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-3">Iterative Experimentation</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-4">Evaluation Metrics</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-5">Visualization and Interpretation</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-6">Model Selection</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-7">Saving the Models</a>
+                        </nav>
+                    </nav>
+                </nav>
+            </div>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-root-margin="0px 0px -40%"
+                data-bs-smooth-scroll="true" class="col-9 container scrollspy-example-2" tabindex="0">
 
-        <section>
-            <h2>Step 2: Understanding the Problem and Tools</h2>
-            <h3>Heart Disease: A Global Foe</h3>
+                <section>
+                    <h2 id="item-0">Our Journey:</h2>
+                    <hr>
+                    <p>
+                        Our team, a mix of curious minds from Vanier College, embarked on a remarkable adventure:
+                        using
+                        AI to
+                        fight
+                        against the ever-present threat of heart disease. While one teammate brought some experience
+                        with Python
+                        and a
+                        taste of the exciting world of AI, the rest of us - two science enthusiasts, one
+                        specializing in
+                        health
+                        sciences, and another diving into computer science and mathematics - were driven by a
+                        powerful
+                        combination of
+                        curiosity and the desire to learn and contribute through teamwork.
+                    </p>
+                    <p>
+                        We were all eager to explore this uncharted territory, excited to understand how AI could be
+                        used for
+                        good, and
+                        passionate about leaving a positive impact on the world.
+                    </p>
+                </section>
 
-            <p>
-                Our journey began by taking a deep dive into the heartbreaking impact of heart disease worldwide. We
-                learned
-                about its alarmingly high prevalence, the risk factors that contribute to it, and the immense burden it
-                places
-                on individuals, families, and healthcare systems. This understanding fueled our passion to explore the
-                potential
-                of Artificial Intelligence (AI) and Machine Learning (ML) in tackling this critical issue.
-            </p>
+                <section>
+                    <h2 id="item-1">Step 1: Data Acquisition and Preparation</h2>
+                    <hr>
+                    <p>
+                        Our first mission on this AI adventure was to hunt down some data. We scoured the web,
+                        places
+                        like
+                        Kaggle, for
+                        publicly available datasets related to healthcare or finance. The goal? Find the building
+                        blocks
+                        for our
+                        machine
+                        learning model.
+                    </p>
+                    <p>
+                        But, the data gods smiled upon us! As we were digging, we stumbled upon a goldmine: a
+                        dataset
+                        specifically
+                        focused on heart disease patients. Even better, this dataset was already prepped and
+                        polished -
+                        minimal
+                        cleaning
+                        needed! Unlike other datasets we'd seen, this one was free of missing pieces,
+                        inconsistencies,
+                        or
+                        formatting
+                        headaches. No wrestling with messy data for us! This lucky find meant we could skip the data
+                        cleaning
+                        grind and
+                        head straight into understanding the dataset and building our cool model.
+                    </p>
+                </section>
 
-            <h3>Leveling Up Our Skills</h3>
+                <section id="item-2">
+                    <h2>Step 2: Understanding the Problem and Tools</h2>
+                    <hr>
+                    <h3 id="item-2-1">Heart Disease: A Global Foe</h3>
+                    <hr>
 
-            <p>
-                Our team was a diverse mix of individuals with varying levels of experience in AI and programming.
-                Recognizing
-                this, I, with my prior knowledge, took on the role of a supportive guide to facilitate the learning
-                process
-                for
-                everyone. I directed the team towards a series of engaging video tutorials covering the essentials:
-                Python
-                programming, scikit-learn, and Git & GitHub Desktop. These resources served a dual purpose: providing a
-                solid
-                foundation in these crucial topics and equipping us with the necessary tools for seamless collaboration
-                and
-                efficient version control.
-            </p>
+                    <p>
+                        Our journey began by taking a deep dive into the heartbreaking impact of heart disease
+                        worldwide. We
+                        learned
+                        about its alarmingly high prevalence, the risk factors that contribute to it, and the
+                        immense
+                        burden it
+                        places
+                        on individuals, families, and healthcare systems. This understanding fueled our passion to
+                        explore the
+                        potential
+                        of Artificial Intelligence (AI) and Machine Learning (ML) in tackling this critical issue.
+                    </p>
 
-            <h3>Delving Deep into the Data</h3>
+                    <h3 id="item-2-2">Leveling Up Our Skills</h3>
+                    <hr>
 
-            <p>
-                To further unravel the mysteries within the dataset, we actively participated in our AI cohort workshop
-                sessions. Through interactive exercises and thought-provoking discussions, we gained valuable insights
-                into
-                data
-                visualization techniques, descriptive statistics, and pattern identification. These exploratory
-                endeavors
-                allowed us to peel back the layers of the dataset, laying a strong foundation for the analysis and model
-                development stages that lay ahead.
-            </p>
+                    <p>
+                        Our team was a diverse mix of individuals with varying levels of experience in AI and
+                        programming.
+                        Recognizing
+                        this, I, with my prior knowledge, took on the role of a supportive guide to facilitate the
+                        learning
+                        process
+                        for
+                        everyone. I directed the team towards a series of engaging video tutorials covering the
+                        essentials:
+                        Python
+                        programming, scikit-learn, and Git & GitHub Desktop. These resources served a dual purpose:
+                        providing a
+                        solid
+                        foundation in these crucial topics and equipping us with the necessary tools for seamless
+                        collaboration
+                        and
+                        efficient version control.
+                    </p>
 
-            <h3>Unveiling a Bias</h3>
+                    <h3 id="item-2-3">Delving Deep into the Data</h3>
+                    <hr>
 
-            <p>
-                However, during our data exploration, we stumbled upon a critical challenge: the dataset exhibited class
-                imbalance. This means that for our binary classification problem (predicting the presence or absence of
-                heart
-                disease), a whopping 90% of the data belonged to the "no heart disease" class (target value of 0.0),
-                while
-                only
-                10% belonged to the "heart disease" class (target value of 1.0). This uneven distribution presented a
-                potential
-                roadblock, as our model might perform less effectively in identifying positive cases (heart disease) due
-                to
-                its
-                overexposure to negative examples. Recognizing this bias early on allowed us to strategize mitigation
-                techniques
-                and ensure a more robust and reliable model.
-            </p>
-        </section>
+                    <p>
+                        To further unravel the mysteries within the dataset, we actively participated in our AI
+                        cohort
+                        workshop
+                        sessions. Through interactive exercises and thought-provoking discussions, we gained
+                        valuable
+                        insights
+                        into
+                        data
+                        visualization techniques, descriptive statistics, and pattern identification. These
+                        exploratory
+                        endeavors
+                        allowed us to peel back the layers of the dataset, laying a strong foundation for the
+                        analysis
+                        and model
+                        development stages that lay ahead.
+                    </p>
 
-        <strong>### STOPPED HERE, NEED TO CONTINUE EXPLAINING</strong>
-        <section>
-            <h2>Step 3: Building and Training our Model</h2>
+                    <h3 id="item-2-4">Unveiling a Bias</h3>
+                    <hr>
 
-            Armed with clean data and basic scikit-learn knowledge, we ventured into model building. We experimented
-            with
-            various ML algorithms, such as Logistic Regression and Random Forest, to predict heart disease presence.
-            Training our chosen model involved feeding it prepared data, allowing it to learn complex relationships
-            between
-            factors and heart disease.
-        </section>
+                    <p>
+                        However, during our data exploration, we stumbled upon a critical challenge: the dataset
+                        exhibited class
+                        imbalance. This means that for our binary classification problem (predicting the presence or
+                        absence of
+                        heart
+                        disease), a whopping 90% of the data belonged to the "no heart disease" class (target value
+                        of
+                        0.0),
+                        while
+                        only
+                        10% belonged to the "heart disease" class (target value of 1.0). This uneven distribution
+                        presented a
+                        potential
+                        roadblock, as our model might perform less effectively in identifying positive cases (heart
+                        disease) due
+                        to
+                        its
+                        overexposure to negative examples. Recognizing this bias early on allowed us to strategize
+                        mitigation
+                        techniques
+                        and ensure a more robust and reliable model.
+                    </p>
+                </section>
 
-        <section>
-            <h2>Step 4: Evaluation and Refinement</h2>
+                <section>
+                    <h2 id="item-3">Step 3: Building and Training our Model</h2>
+                    <hr>
 
-            Like mastering any skill, building an ML model requires evaluation and refinement. We used metrics like
-            accuracy, precision, and recall to assess our model's performance. Iteratively refining the model involved
-            tweaking parameters, adjusting pre-processing techniques, and exploring alternative algorithms.
-        </section>
+                    In our quest to build a model for predicting heart disease, we embarked on a thrilling journey
+                    through the intricate world of machine learning. Here's a closer look at the steps we took:
 
-        <section>
-            <h2>Step 5: Ethical Considerations</h2>
+                    <h3 id="item-3-1">Exploring Machine Learning Algorithms</h3>
+                    <hr>
+                    <p>
+                        We delved into a diverse arsenal of machine learning
+                        algorithms, each offering unique strengths. Logistic Regression and Random Forest were our top
+                        contenders in the battle to accurately predict the presence of heart disease.
+                    </p>
 
-            As our understanding of AI deepened, so did our awareness of ethical considerations. We learned about the
-            potential biases embedded in data and algorithms, leading to unfair results. To address this, we carefully
-            selected our initial data source and implemented bias mitigation techniques during model training.
-            Transparency
-            and continuous monitoring were emphasized to ensure fairness and responsibility.
-        </section>
 
-        <section>
-            <h2>Step 6: Conclusion and Future Steps</h2>
+                    <h3 id="item-3-2">Model Training</h3>
+                    <hr>
+                    <p>
+                        With our chosen algorithms in hand, we proceeded to train them. This crucial step
+                        involved feeding our meticulously prepared data into the models, enabling them to discern and
+                        learn
+                        the intricate relationships between various factors and the presence of heart disease.
+                    </p>
 
-            This project has been a profound learning experience. We transitioned from novices to proficient users of
-            Python, scikit-learn, and ML concepts. More importantly, we recognized the transformative potential of AI in
-            healthcare and the importance of responsible development. Moving forward, we are eager to explore advanced
-            AI
-            techniques, delve deeper into healthcare data analysis, and advocate for ethical AI solutions to benefit
-            society.
-        </section>
+
+                    <h3 id="item-3-3">Iterative Experimentation</h3>
+                    <hr>
+                    <p>
+                        Our approach wasn't static, but rather an iterative dance. We
+                        experimented with different parameters, fine-tuning our models to achieve optimal performance.
+                        This
+                        involved adjusting hyperparameters, exploring feature engineering techniques like Polynomial
+                        Features, and meticulously assessing the impact on model efficacy.
+                    </p>
+
+
+                    <h3 id="item-3-4">Evaluation Metrics</h3>
+                    <hr>
+                    <p>
+                        As responsible data scientists, we understood the importance of robust
+                        evaluation metrics. Beyond traditional accuracy measures, we delved into metrics like precision,
+                        recall, and balanced accuracy to gain deeper insights into our model's performance.
+                    </p>
+
+                    <h3 id="item-3-5">Visualization and Interpretation</h3>
+                    <hr>
+                    <p>
+                        Visualizing the model's performance and interpreting its
+                        predictions were integral parts of our process. We constructed Precision-Recall curves to
+                        evaluate
+                        the trade-off between precision and recall and gain insights into model behavior across
+                        different
+                        thresholds.
+                    </p>
+
+                    <h3 id="item-3-6">Model Selection</h3>
+                    <hr>
+                    <p>
+                        After a thorough evaluation and comparison, we identified the most promising models
+                        for further analysis. Our selection criteria were based on a holistic assessment, considering
+                        not
+                        only accuracy but also recall, precision, and the area under the Precision-Recall curve (PR
+                        AUC).
+                    </p>
+
+                    <h3 id="item-3-7">Saving the Models</h3>
+                    <hr>
+                    <p>
+                        Recognizing the importance of reproducibility and scalability, we saved our
+                        trained models in the ONNX format. This format ensures compatibility across different platforms
+                        and
+                        environments, facilitating seamless integration into real-world applications.
+                    </p>
+                </section>
+                <strong>### STOPPED HERE, NEED TO CONTINUE EXPLAINING</strong>
+
+                <section>
+                    <h2>Step 4: Evaluation and Refinement</h2>
+                    <hr>
+
+                    Like mastering any skill, building an ML model requires evaluation and refinement. We used
+                    metrics
+                    like
+                    accuracy, precision, and recall to assess our model's performance. Iteratively refining the
+                    model
+                    involved
+                    tweaking parameters, adjusting pre-processing techniques, and exploring alternative algorithms.
+                </section>
+
+                <section>
+                    <h2>Step 5: Ethical Considerations</h2>
+                    <hr>
+
+                    As our understanding of AI deepened, so did our awareness of ethical considerations. We learned
+                    about the
+                    potential biases embedded in data and algorithms, leading to unfair results. To address this, we
+                    carefully
+                    selected our initial data source and implemented bias mitigation techniques during model
+                    training.
+                    Transparency
+                    and continuous monitoring were emphasized to ensure fairness and responsibility.
+                </section>
+
+                <section>
+                    <h2>Step 6: Conclusion and Future Steps</h2>
+                    <hr>
+
+                    This project has been a profound learning experience. We transitioned from novices to proficient
+                    users of
+                    Python, scikit-learn, and ML concepts. More importantly, we recognized the transformative
+                    potential
+                    of AI in
+                    healthcare and the importance of responsible development. Moving forward, we are eager to
+                    explore
+                    advanced
+                    AI
+                    techniques, delve deeper into healthcare data analysis, and advocate for ethical AI solutions to
+                    benefit
+                    society.
+                </section>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
