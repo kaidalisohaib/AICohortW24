@@ -30,7 +30,7 @@ async function main(featuresArray) {
         // document.write(`Prediction: ${results.label.data[0]}`)
 
     } catch (e) {
-        console.log(`failed to inference ONNX model: ${e}.`);
+        console.error(`failed to inference ONNX model: ${e}.`);
     }
 }
 
