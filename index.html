@@ -6,102 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONNX Runtime JavaScript Examples</title>
     <!-- <link rel="stylesheet" href="./js-css/styles.css"> -->
-    <script type="module" src="./js-css/prediction.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #fff1e0;
-        }
-
-        header {
-            background-color: #451429;
-            /* Rich burgundy */
-            color: #fff;
-            padding: 2rem 0;
-            /* Adjusted padding */
-            text-align: center;
-            margin-bottom: 1rem;
-            /* Added margin for separation */
-        }
-
-        header h1 {
-            margin: 10px;
-            /* Remove default margin for h1 */
-        }
-
-        main {
-            max-width: 960px;
-            margin: 0 auto;
-            /* Adjusted margin */
-            padding: 1rem;
-            background-color: #fff1e0;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        .nav-link {
-            color: #c95e58 !important;
-            /* Rosy pink for links */
-        }
-
-        .nav-link:hover,
-        .nav-link:focus {
-            color: #ffa036 !important;
-            /* Highlight color when hovered */
-        }
-
-        .nav-link.active {
-            background-color: #ffbe98 !important;
-            /* Highlight color when active */
-        }
-
-        footer {
-            background-color: #451429;
-            /* Rich burgundy */
-            color: #ffffff;
-            padding: 1rem 0;
-            /* Adjusted padding */
-            text-align: center;
-            border-top: 1px solid #fff;
-            /* Added border for separation */
-        }
-
-        footer p {
-            margin: 0;
-            /* Remove default margin for p */
-        }
-
-        .sticky-nav {
-            position: sticky;
-            top: 10%;
-            height: min-content;
-        }
-
-        h2 {
-            margin-top: 50px;
-        }
-
-        h3 {
-            margin-top: 30px;
-        }
-
-        h3+hr {
-            width: 70%;
-        }
-
-        hr {
-            border: none;
-            height: 2px;
-            background-color: #d44934 !important;
-            color: #d44934 !important;
-        }
-    </style>
+    <script type="module" src="website-related/js-css/prediction.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="website-related/js-css/styles.css">
 </head>
 
 <body>
@@ -113,20 +21,19 @@
     <main class="container">
         <div class="row">
 
-            <div class="col-3">
-                <nav id="navbar-example3" class="flex-column align-items-stretch pe-4 border-end sticky-nav">
-                    <nav class="nav nav-pills flex-column">
-                        <a class="nav-link" href="#item-0">Our Journey</a>
-                        <a class="nav-link" href="#item-1">Data Acquisition and Preparation</a>
-                        <a class="nav-link" href="#item-2">Step 2: Understanding the Problem and Tools</a>
-                        <nav class="nav nav-pills flex-column">
+            <nav id="navbar-example2" class="col-3 navbar flex-column align-items-stretch pe-4 border-end sticky-nav">
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#item-0">Our Journey</a>
+                    <a class="nav-link" href="#item-1">Step 1: Data Acquisition and Preparation</a>
+                    <a class="nav-link" href="#item-2">Step 2: Understanding the Problem and Tools</a>
+                    <!-- <nav class="nav nav-pills flex-column">
                             <a class="nav-link ms-3 my-1" href="#item-2-1">Heart Disease: A Global Foe</a>
                             <a class="nav-link ms-3 my-1" href="#item-2-2">Leveling Up Our Skills</a>
                             <a class="nav-link ms-3 my-1" href="#item-2-3">Delving Deep into the Data</a>
                             <a class="nav-link ms-3 my-1" href="#item-2-4">Unveiling a Bias</a>
-                        </nav>
-                        <a class="nav-link" href="#item-3">Step 3: Building and Training our Model</a>
-                        <nav class="nav nav-pills flex-column">
+                        </nav> -->
+                    <a class="nav-link" href="#item-3">Step 3: Building and Training our Model</a>
+                    <!-- <nav class="nav nav-pills flex-column">
                             <a class="nav-link ms-3 my-1" href="#item-3-1">Exploring Machine Learning Algorithms</a>
                             <a class="nav-link ms-3 my-1" href="#item-3-2">Model Training</a>
                             <a class="nav-link ms-3 my-1" href="#item-3-3">Iterative Experimentation</a>
@@ -134,15 +41,14 @@
                             <a class="nav-link ms-3 my-1" href="#item-3-5">Visualization and Interpretation</a>
                             <a class="nav-link ms-3 my-1" href="#item-3-6">Model Selection</a>
                             <a class="nav-link ms-3 my-1" href="#item-3-7">Saving the Models</a>
-                        </nav>
-                    </nav>
+                        </nav> -->
                 </nav>
-            </div>
-            <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-root-margin="0px 0px -40%"
-                data-bs-smooth-scroll="true" class="col-9 container scrollspy-example-2" tabindex="0">
+            </nav>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0"
+                class="col-9 container scrollspy-example" tabindex="0">
 
-                <section>
-                    <h2 id="item-0">Our Journey:</h2>
+                <section id="item-0">
+                    <h2>Our Journey:</h2>
                     <hr>
                     <p>
                         Our team, a mix of curious minds from Vanier College, embarked on a remarkable adventure:
@@ -168,8 +74,8 @@
                     </p>
                 </section>
 
-                <section>
-                    <h2 id="item-1">Step 1: Data Acquisition and Preparation</h2>
+                <section id="item-1">
+                    <h2>Step 1: Data Acquisition and Preparation</h2>
                     <hr>
                     <p>
                         Our first mission on this AI adventure was to hunt down some data. We scoured the web,
@@ -204,7 +110,7 @@
                 <section id="item-2">
                     <h2>Step 2: Understanding the Problem and Tools</h2>
                     <hr>
-                    <h3 id="item-2-1">Heart Disease: A Global Foe</h3>
+                    <h3>Heart Disease: A Global Foe</h3>
                     <hr>
 
                     <p>
@@ -221,7 +127,7 @@
                         of Artificial Intelligence (AI) and Machine Learning (ML) in tackling this critical issue.
                     </p>
 
-                    <h3 id="item-2-2">Leveling Up Our Skills</h3>
+                    <h3>Leveling Up Our Skills</h3>
                     <hr>
 
                     <p>
@@ -244,7 +150,7 @@
                         efficient version control.
                     </p>
 
-                    <h3 id="item-2-3">Delving Deep into the Data</h3>
+                    <h3>Delving Deep into the Data</h3>
                     <hr>
 
                     <p>
@@ -265,7 +171,7 @@
                         development stages that lay ahead.
                     </p>
 
-                    <h3 id="item-2-4">Unveiling a Bias</h3>
+                    <h3>Unveiling a Bias</h3>
                     <hr>
 
                     <p>
@@ -293,14 +199,14 @@
                     </p>
                 </section>
 
-                <section>
-                    <h2 id="item-3">Step 3: Building and Training our Model</h2>
+                <section id="item-3">
+                    <h2>Step 3: Building and Training our Model</h2>
                     <hr>
 
                     In our quest to build a model for predicting heart disease, we embarked on a thrilling journey
                     through the intricate world of machine learning. Here's a closer look at the steps we took:
 
-                    <h3 id="item-3-1">Exploring Machine Learning Algorithms</h3>
+                    <h3>Exploring Machine Learning Algorithms</h3>
                     <hr>
                     <p>
                         We delved into a diverse arsenal of machine learning
@@ -309,7 +215,7 @@
                     </p>
 
 
-                    <h3 id="item-3-2">Model Training</h3>
+                    <h3>Model Training</h3>
                     <hr>
                     <p>
                         With our chosen algorithms in hand, we proceeded to train them. This crucial step
@@ -319,7 +225,7 @@
                     </p>
 
 
-                    <h3 id="item-3-3">Iterative Experimentation</h3>
+                    <h3>Iterative Experimentation</h3>
                     <hr>
                     <p>
                         Our approach wasn't static, but rather an iterative dance. We
@@ -330,7 +236,7 @@
                     </p>
 
 
-                    <h3 id="item-3-4">Evaluation Metrics</h3>
+                    <h3>Evaluation Metrics</h3>
                     <hr>
                     <p>
                         As responsible data scientists, we understood the importance of robust
@@ -338,7 +244,7 @@
                         recall, and balanced accuracy to gain deeper insights into our model's performance.
                     </p>
 
-                    <h3 id="item-3-5">Visualization and Interpretation</h3>
+                    <h3>Visualization and Interpretation</h3>
                     <hr>
                     <p>
                         Visualizing the model's performance and interpreting its
@@ -349,7 +255,7 @@
                         thresholds.
                     </p>
 
-                    <h3 id="item-3-6">Model Selection</h3>
+                    <h3>Model Selection</h3>
                     <hr>
                     <p>
                         After a thorough evaluation and comparison, we identified the most promising models
@@ -359,7 +265,7 @@
                         AUC).
                     </p>
 
-                    <h3 id="item-3-7">Saving the Models</h3>
+                    <h3>Saving the Models</h3>
                     <hr>
                     <p>
                         Recognizing the importance of reproducibility and scalability, we saved our
@@ -422,8 +328,8 @@
             <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 </body>
 
