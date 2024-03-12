@@ -1,88 +1,101 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #fff1e0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+
+  line-height: 1.6;
+  background-color: #fff1e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
 header {
-    background-color: #451429;
-    /* Rich burgundy */
-    color: #fff;
-    padding: 2rem 0;
-    /* Adjusted padding */
-    text-align: center;
-    margin-bottom: 1rem;
-    /* Added margin for separation */
+  background-color: #451429;
+  /* Rich burgundy */
+  color: #fff;
+  padding: 2rem 0;
+  /* Adjusted padding */
+  text-align: center;
+  margin-bottom: 1rem;
+  /* Added margin for separation */
 }
 
 header h1 {
-    margin: 10px;
-    /* Remove default margin for h1 */
+  margin: 10px;
+  /* Remove default margin for h1 */
 }
 
 main {
-    max-width: 960px;
-    margin: 1rem 1rem;
-    /* Adjusted margin */
-    padding: 1rem;
-    background-color: #fff1e0;
+  max-width: 960px;
+  margin: 1rem 1rem;
+  /* Adjusted margin */
+  padding: 1rem;
+  background-color: #fff1e0;
 }
 
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .nav-link {
-    color: #c95e58 !important;
+  color: #c95e58 !important;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #ffa036 !important;
+  color: #ffa036 !important;
 }
 
 .nav-link.active {
-    background-color: #ffbe98 !important;
+  background-color: #ffbe98 !important;
 }
 
 footer {
-    background-color: #451429;
-    color: #ffffff;
-    padding: 1rem 0;
-    text-align: center;
-    border-top: 1px solid #fff;
-    margin-top: auto;
+  background-color: #451429;
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid #fff;
+  margin-top: auto;
 }
 
 footer p {
-    margin: 0;
+  margin: 0;
 }
 
 .sticky-nav {
-    position: sticky;
-    top: 10%;
-    height: min-content;
+  position: sticky;
+  top: 10%;
+  height: min-content;
 }
 
 h2 {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 h3 {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
-h3+hr {
-    width: 70%;
+h3 + hr {
+  width: 70%;
 }
 
 hr {
-    border: none;
-    height: 2px;
-    background-color: #d44934 !important;
-    color: #d44934 !important;
+  border: none;
+  height: 2px;
+  background-color: #d44934 !important;
+  color: #d44934 !important;
+}
+
+img {
+  cursor: zoom-in;
+}
+
+small {
+  font-weight: bold;
 }
