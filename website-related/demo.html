@@ -1,441 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Demo</title>
     <!-- <link rel="stylesheet" href="./js-css/styles.css"> -->
     <script type="module" src="js-css/prediction.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="js-css/styles.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="js-css/styles.css" />
+  </head>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
     <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-        <path
-            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+      />
     </symbol>
     <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-        <path
-            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+      <path
+        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+      />
     </symbol>
-    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-        <path
-            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    <symbol
+      id="exclamation-triangle-fill"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+      />
     </symbol>
-</svg>
+  </svg>
 
-<body>
-
+  <body>
     <header>
-        <div class="container">
-            <h1>Project Report: Predicting Heart Disease with Machine Learning</h1>
-            <h2>
-                <a class="badge bg-danger link-light" href="../index.html">Project report</a>
-            </h2>
-
-        </div>
+      <div class="container">
+        <h1>Demo: Predicting Heart Disease with Machine Learning</h1>
+        <h2>
+          <a class="badge bg-danger link-light" href="../index.html"
+            >Project report</a
+          >
+        </h2>
+      </div>
     </header>
     <main class="container shadow rounded">
-        <div class="alert alert-primary d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-                <use xlink:href="#info-fill" />
-            </svg>
-            <div>
-                <strong>Privacy and Ethical Concerns:</strong>
-                Please be assured that your privacy is of utmost importance to us. The machine learning model used for
-                predictions is downloaded and executed locally on your device, ensuring that none of your personal
-                information or form data is sent over the internet or stored on any external servers. Your data remains
-                secure and confidential within your own device, and no one other than yourself has access to it.
-                Additionally, we are committed to upholding ethical standards in our use of machine learning
-                technologies.
-                If you have any questions or concerns about privacy or ethical considerations, please feel free to reach
-                out
-                to us.
-            </div>
+      <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg
+          class="bi flex-shrink-0 me-2"
+          width="24"
+          height="24"
+          role="img"
+          aria-label="Info:"
+        >
+          <use xlink:href="#info-fill" />
+        </svg>
+        <div>
+          <strong>Privacy and Ethical Concerns:</strong>
+          Please be assured that your privacy is of utmost importance to us. The
+          machine learning model used for predictions is downloaded and executed
+          locally on your device, ensuring that none of your personal
+          information or form data is sent over the internet or stored on any
+          external servers. Your data remains secure and confidential within
+          your own device, and no one other than yourself has access to it.
+          Additionally, we are committed to upholding ethical standards in our
+          use of machine learning technologies. If you have any questions or
+          concerns about privacy or ethical considerations, please feel free to
+          reach out to us.
         </div>
-        <div class="alert alert-warning d-flex align-items-center my-4" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-                <use xlink:href="#exclamation-triangle-fill" />
-            </svg>
-            <div>
-                <strong>Disclaimer:</strong>
-                This prediction tool is provided for educational purposes only and should not be considered as
-                professional
-                medical advice. The predictions generated by this tool are based on machine learning algorithms trained
-                on
-                historical data and may not be accurate in all cases. The balanced accuracy of the model is 77%,
-                indicating
-                that while the model performs reasonably well overall, it may not be perfect and should be used with
-                caution.
-                It is important to consult with a qualified healthcare professional for personalized medical advice and
-                treatment. By using this tool, you acknowledge that the predictions provided are for informational
-                purposes
-                only and should not be relied upon as a substitute for professional medical advice.
-            </div>
+      </div>
+      <div
+        class="alert alert-warning d-flex align-items-center my-4"
+        role="alert"
+      >
+        <svg
+          class="bi flex-shrink-0 me-2"
+          width="24"
+          height="24"
+          role="img"
+          aria-label="Warning:"
+        >
+          <use xlink:href="#exclamation-triangle-fill" />
+        </svg>
+        <div>
+          <strong>Disclaimer:</strong>
+          This prediction tool is provided for educational purposes only and
+          should not be considered as professional medical advice. The
+          predictions generated by this tool are based on machine learning
+          algorithms trained on historical data and may not be accurate in all
+          cases. The balanced accuracy of the model is 77%, indicating that
+          while the model performs reasonably well overall, it may not be
+          perfect and should be used with caution. It is important to consult
+          with a qualified healthcare professional for personalized medical
+          advice and treatment. By using this tool, you acknowledge that the
+          predictions provided are for informational purposes only and should
+          not be relied upon as a substitute for professional medical advice.
         </div>
-        <form class="row g-3 needs-validation" id="predictionForm" novalidate>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has been told by a health professional that they have
-                        High Blood Pressure.</div>
-                    <label for="validationCustom01" class="form-label">HighBP</label>
-                    <div class="d-flex">
-                        <select name="HighBP" class="form-select me-2" id="validationCustom01" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have high blood pressure.</div>
-                    </div>
-                </div>
+      </div>
+      <form class="row g-3 needs-validation" id="predictionForm" novalidate>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has been told by a health professional
+              that they have High Blood Pressure.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has been told by a health professional that they have
-                        High Blood Cholesterol.</div>
-                    <label for="validationCustom02" class="form-label">HighChol</label>
-                    <div class="d-flex">
-                        <select name="HighChol" class="form-select me-2" id="validationCustom02" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have high cholesterol.</div>
-                    </div>
-                </div>
+            <label for="validationCustom01" class="form-label">HighBP</label>
+            <div class="d-flex">
+              <select
+                name="HighBP"
+                class="form-select me-2"
+                id="validationCustom01"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have high blood pressure.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Cholesterol Check, if the person has their cholesterol levels checked within
-                        the last 5 years.</div>
-                    <label for="validationCustomUsername" class="form-label">CholCheck</label>
-                    <div class="d-flex">
-                        <select name="CholCheck" class="form-select me-2" id="validationCustomUsername" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you had a cholesterol check in the last 5
-                            years.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has been told by a health professional
+              that they have High Blood Cholesterol.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Body Mass Index, calculated by dividing the person's weight (in kilogram) by
-                        the square of their height (in meters).</div>
-                    <label for="validationCustom03" class="form-label">BMI</label>
-                    <div class="d-flex">
-                        <input name="BMI" type="number" class="form-control me-2" id="validationCustom03" min="0"
-                            required>
-                        <div class="invalid-feedback">Please provide your Body Mass Index.</div>
-                    </div>
-                </div>
+            <label for="validationCustom02" class="form-label">HighChol</label>
+            <div class="d-flex">
+              <select
+                name="HighChol"
+                class="form-select me-2"
+                id="validationCustom02"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have high cholesterol.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has smoked at least 100 cigarettes.</div>
-                    <label for="validationCustom04" class="form-label">Smoker</label>
-                    <div class="d-flex">
-                        <select name="Smoker" class="form-select me-2" id="validationCustom04" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you are a smoker.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Cholesterol Check, if the person has their cholesterol levels
+              checked within the last 5 years.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has a history of stroke.</div>
-                    <label for="validationCustom05" class="form-label">Stroke</label>
-                    <div class="d-flex">
-                        <select name="Stroke" class="form-select me-2" id="validationCustom05" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have a history of stroke.</div>
-                    </div>
-                </div>
+            <label for="validationCustomUsername" class="form-label"
+              >CholCheck</label
+            >
+            <div class="d-flex">
+              <select
+                name="CholCheck"
+                class="form-select me-2"
+                id="validationCustomUsername"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you had a cholesterol check in the last 5
+                years.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has a history of diabetes, or currently in
-                        pre-diabetes, or suffers from either type of diabetes.</div>
-                    <label for="validationCustom06" class="form-label">Diabetes</label>
-                    <div class="d-flex">
-                        <select name="Diabetes" class="form-select me-2" id="validationCustom06" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have diabetes.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Body Mass Index, calculated by dividing the person's weight (in
+              kilogram) by the square of their height (in meters).
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has some form of physical activity in their
-                        day-to-day routine.</div>
-                    <label for="validationCustom07" class="form-label">PhysActivity</label>
-                    <div class="d-flex">
-                        <select name="PhysActivity" class="form-select me-2" id="validationCustom07" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have physical activity in your routine.
-                        </div>
-                    </div>
-                </div>
+            <label for="validationCustom03" class="form-label">BMI</label>
+            <div class="d-flex">
+              <input
+                name="BMI"
+                type="number"
+                class="form-control me-2"
+                id="validationCustom03"
+                min="0"
+                required
+              />
+              <div class="invalid-feedback">
+                Please provide your Body Mass Index.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person consumes 1 or more fruit(s) daily.</div>
-                    <label for="validationCustom08" class="form-label">Fruits</label>
-                    <div class="d-flex">
-                        <select name="Fruits" class="form-select me-2" id="validationCustom08" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you consume fruits daily.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has smoked at least 100 cigarettes.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person consumes 1 or more vegetable(s) daily.</div>
-                    <label for="validationCustom09" class="form-label">Veggies</label>
-                    <div class="d-flex">
-                        <select name="Veggies" class="form-select me-2" id="validationCustom09" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you consume vegetables daily.</div>
-                    </div>
-                </div>
+            <label for="validationCustom04" class="form-label">Smoker</label>
+            <div class="d-flex">
+              <select
+                name="Smoker"
+                class="form-select me-2"
+                id="validationCustom04"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you are a smoker.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has more than 14 drinks per week.</div>
-                    <label for="validationCustom10" class="form-label">HvyAlcoholConsump</label>
-                    <div class="d-flex">
-                        <select name="HvyAlcoholConsump" class="form-select me-2" id="validationCustom10" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have heavy alcohol consumption.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has a history of stroke.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has any form of health insurance.</div>
-                    <label for="validationCustom11" class="form-label">AnyHealthcare</label>
-                    <div class="d-flex">
-                        <select name="AnyHealthcare" class="form-select me-2" id="validationCustom11" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have any form of health insurance.</div>
-                    </div>
-                </div>
+            <label for="validationCustom05" class="form-label">Stroke</label>
+            <div class="d-flex">
+              <select
+                name="Stroke"
+                class="form-select me-2"
+                id="validationCustom05"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have a history of stroke.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person wanted to visit a doctor within the past 1 year but
-                        couldn't, due to cost.</div>
-                    <label for="validationCustom12" class="form-label">NoDocbcCost</label>
-                    <div class="d-flex">
-                        <select name="NoDocbcCost" class="form-select me-2" id="validationCustom12" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you couldn't visit a doctor due to cost in the
-                            past year.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has a history of diabetes, or currently in
+              pre-diabetes, or suffers from either type of diabetes.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the person's response to how well is their general health, ranging
-                        from 1 (excellent) to 5 (poor).</div>
-                    <label for="validationCustom13" class="form-label">GenHlth</label>
-                    <div class="d-flex">
-                        <select name="GenHlth" class="form-select me-2" id="validationCustom13" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Excellent</option>
-                            <option value="2">Very Good</option>
-                            <option value="3">Good</option>
-                            <option value="4">Fair</option>
-                            <option value="5">Poor</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate your general health.</div>
-                    </div>
-                </div>
+            <label for="validationCustom06" class="form-label">Diabetes</label>
+            <div class="d-flex">
+              <select
+                name="Diabetes"
+                class="form-select me-2"
+                id="validationCustom06"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have diabetes.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the number of days, within the past 30 days that the person had bad
-                        mental health.</div>
-                    <label for="validationCustom14" class="form-label">MentHlth</label>
-                    <div class="d-flex">
-                        <input name="MentHlth" type="number" class="form-control me-2" id="validationCustom14" min="0"
-                            max="30" required>
-                        <div class="invalid-feedback">Please provide the number of days you had bad mental health in the
-                            past 30 days.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has some form of physical activity in
+              their day-to-day routine.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the number of days, within the past 30 days that the person had bad
-                        physical health.</div>
-                    <label for="validationCustom15" class="form-label">PhysHlth</label>
-                    <div class="d-flex">
-                        <input name="PhysHlth" type="number" class="form-control me-2" id="validationCustom15" min="0"
-                            max="30" required>
-                        <div class="invalid-feedback">Please provide the number of days you had bad physical health in
-                            the past 30 days.</div>
-                    </div>
-                </div>
+            <label for="validationCustom07" class="form-label"
+              >PhysActivity</label
+            >
+            <div class="d-flex">
+              <select
+                name="PhysActivity"
+                class="form-select me-2"
+                id="validationCustom07"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have physical activity in your routine.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates if the person has difficulty while walking or climbing stairs.
-                    </div>
-                    <label for="validationCustom16" class="form-label">DiffWalk</label>
-                    <div class="d-flex">
-                        <select name="DiffWalk" class="form-select me-2" id="validationCustom16" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate if you have difficulty walking or climbing stairs.
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person consumes 1 or more fruit(s) daily.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the gender of the person, where 0 is female and 1 is male.</div>
-                    <label for="validationCustom17" class="form-label">Sex</label>
-                    <div class="d-flex">
-                        <select name="Sex" class="form-select me-2" id="validationCustom17" required>
-                            <option value="">Choose...</option>
-                            <option value="0">Female</option>
-                            <option value="1">Male</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate your gender.</div>
-                    </div>
-                </div>
+            <label for="validationCustom08" class="form-label">Fruits</label>
+            <div class="d-flex">
+              <select
+                name="Fruits"
+                class="form-select me-2"
+                id="validationCustom08"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you consume fruits daily.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the age class of the person, where 1 is 18 years to 24 years up
-                        till 13 which is 80 years or older, each interval between has a 5-year increment.</div>
-                    <label for="validationCustom18" class="form-label">Age</label>
-                    <div class="d-flex">
-                        <select name="Age" class="form-select me-2" id="validationCustom18" required>
-                            <option value="">Choose...</option>
-                            <option value="1">18 - 24 years</option>
-                            <option value="2">25 - 29 years</option>
-                            <option value="3">30 - 34 years</option>
-                            <option value="4">35 - 39 years</option>
-                            <option value="5">40 - 44 years</option>
-                            <option value="6">45 - 49 years</option>
-                            <option value="7">50 - 54 years</option>
-                            <option value="8">55 - 59 years</option>
-                            <option value="9">60 - 64 years</option>
-                            <option value="10">65 - 69 years</option>
-                            <option value="11">70 - 74 years</option>
-                            <option value="12">75 - 79 years</option>
-                            <option value="13">80 years or older</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate your age group.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person consumes 1 or more vegetable(s) daily.
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the highest year of school completed, with 0 being never attended
-                        or kindergarten only and 6 being, having attended 4 years of college or more.</div>
-                    <label for="validationCustom19" class="form-label">Education</label>
-                    <div class="d-flex">
-                        <select name="Education" class="form-select me-2" id="validationCustom19" required>
-                            <option value="">Choose...</option>
-                            <option value="0">Never attended or Kindergarten only</option>
-                            <option value="1">Grades 1 through 8 (Elementary)</option>
-                            <option value="2">Grades 9 through 11 (Some high school)</option>
-                            <option value="3">Grade 12 or GED (High school graduate)</option>
-                            <option value="4">College 1 year to 3 years (Some college or technical school)</option>
-                            <option value="5">College 4 years or more (College graduate)</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate your highest year of school completed.</div>
-                    </div>
-                </div>
+            <label for="validationCustom09" class="form-label">Veggies</label>
+            <div class="d-flex">
+              <select
+                name="Veggies"
+                class="form-select me-2"
+                id="validationCustom09"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you consume vegetables daily.
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <div class="form-text">Indicates the total household income, ranging from 1 (at least $10,000) to 6
-                        ($75,000+).</div>
-                    <label for="validationCustom20" class="form-label">Income</label>
-                    <div class="d-flex">
-                        <select name="Income" class="form-select me-2" id="validationCustom20" required>
-                            <option value="">Choose...</option>
-                            <option value="1">Less than $10,000</option>
-                            <option value="2">$10,000 to less than $15,000</option>
-                            <option value="3">$15,000 to less than $20,000</option>
-                            <option value="4">$20,000 to less than $25,000</option>
-                            <option value="5">$25,000 to less than $35,000</option>
-                            <option value="6">$35,000 to less than $50,000</option>
-                            <option value="7">$50,000 to less than $75,000</option>
-                            <option value="8">$75,000 or more</option>
-                        </select>
-                        <div class="invalid-feedback">Please indicate your total household income.</div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has more than 14 drinks per week.
             </div>
-            <div class="col-12 text-center my-4">
-                <!-- <button class="btn btn-primary col-4" type="submit">Make prediction</button> -->
-                <button id="makePredictButton" class="btn btn-warning col-4" type="submit">
-                    <span class="spinner-border spinner-border-sm visually-hidden" role="status"
-                        aria-hidden="true"></span>
-                    <span>Make prediction</span>
-                </button>
+            <label for="validationCustom10" class="form-label"
+              >HvyAlcoholConsump</label
+            >
+            <div class="d-flex">
+              <select
+                name="HvyAlcoholConsump"
+                class="form-select me-2"
+                id="validationCustom10"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have heavy alcohol consumption.
+              </div>
             </div>
-        </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has any form of health insurance.
+            </div>
+            <label for="validationCustom11" class="form-label"
+              >AnyHealthcare</label
+            >
+            <div class="d-flex">
+              <select
+                name="AnyHealthcare"
+                class="form-select me-2"
+                id="validationCustom11"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have any form of health insurance.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person wanted to visit a doctor within the past 1
+              year but couldn't, due to cost.
+            </div>
+            <label for="validationCustom12" class="form-label"
+              >NoDocbcCost</label
+            >
+            <div class="d-flex">
+              <select
+                name="NoDocbcCost"
+                class="form-select me-2"
+                id="validationCustom12"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you couldn't visit a doctor due to cost in
+                the past year.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the person's response to how well is their general
+              health, ranging from 1 (excellent) to 5 (poor).
+            </div>
+            <label for="validationCustom13" class="form-label">GenHlth</label>
+            <div class="d-flex">
+              <select
+                name="GenHlth"
+                class="form-select me-2"
+                id="validationCustom13"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Excellent</option>
+                <option value="2">Very Good</option>
+                <option value="3">Good</option>
+                <option value="4">Fair</option>
+                <option value="5">Poor</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate your general health.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the number of days, within the past 30 days that the
+              person had bad mental health.
+            </div>
+            <label for="validationCustom14" class="form-label">MentHlth</label>
+            <div class="d-flex">
+              <input
+                name="MentHlth"
+                type="number"
+                class="form-control me-2"
+                id="validationCustom14"
+                min="0"
+                max="30"
+                required
+              />
+              <div class="invalid-feedback">
+                Please provide the number of days you had bad mental health in
+                the past 30 days.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the number of days, within the past 30 days that the
+              person had bad physical health.
+            </div>
+            <label for="validationCustom15" class="form-label">PhysHlth</label>
+            <div class="d-flex">
+              <input
+                name="PhysHlth"
+                type="number"
+                class="form-control me-2"
+                id="validationCustom15"
+                min="0"
+                max="30"
+                required
+              />
+              <div class="invalid-feedback">
+                Please provide the number of days you had bad physical health in
+                the past 30 days.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates if the person has difficulty while walking or climbing
+              stairs.
+            </div>
+            <label for="validationCustom16" class="form-label">DiffWalk</label>
+            <div class="d-flex">
+              <select
+                name="DiffWalk"
+                class="form-select me-2"
+                id="validationCustom16"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate if you have difficulty walking or climbing
+                stairs.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the gender of the person, where 0 is female and 1 is
+              male.
+            </div>
+            <label for="validationCustom17" class="form-label">Sex</label>
+            <div class="d-flex">
+              <select
+                name="Sex"
+                class="form-select me-2"
+                id="validationCustom17"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+              </select>
+              <div class="invalid-feedback">Please indicate your gender.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the age class of the person, where 1 is 18 years to 24
+              years up till 13 which is 80 years or older, each interval between
+              has a 5-year increment.
+            </div>
+            <label for="validationCustom18" class="form-label">Age</label>
+            <div class="d-flex">
+              <select
+                name="Age"
+                class="form-select me-2"
+                id="validationCustom18"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">18 - 24 years</option>
+                <option value="2">25 - 29 years</option>
+                <option value="3">30 - 34 years</option>
+                <option value="4">35 - 39 years</option>
+                <option value="5">40 - 44 years</option>
+                <option value="6">45 - 49 years</option>
+                <option value="7">50 - 54 years</option>
+                <option value="8">55 - 59 years</option>
+                <option value="9">60 - 64 years</option>
+                <option value="10">65 - 69 years</option>
+                <option value="11">70 - 74 years</option>
+                <option value="12">75 - 79 years</option>
+                <option value="13">80 years or older</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate your age group.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the highest year of school completed, with 0 being never
+              attended or kindergarten only and 6 being, having attended 4 years
+              of college or more.
+            </div>
+            <label for="validationCustom19" class="form-label">Education</label>
+            <div class="d-flex">
+              <select
+                name="Education"
+                class="form-select me-2"
+                id="validationCustom19"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="0">Never attended or Kindergarten only</option>
+                <option value="1">Grades 1 through 8 (Elementary)</option>
+                <option value="2">
+                  Grades 9 through 11 (Some high school)
+                </option>
+                <option value="3">
+                  Grade 12 or GED (High school graduate)
+                </option>
+                <option value="4">
+                  College 1 year to 3 years (Some college or technical school)
+                </option>
+                <option value="5">
+                  College 4 years or more (College graduate)
+                </option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate your highest year of school completed.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <div class="form-text">
+              Indicates the total household income, ranging from 1 (at least
+              $10,000) to 6 ($75,000+).
+            </div>
+            <label for="validationCustom20" class="form-label">Income</label>
+            <div class="d-flex">
+              <select
+                name="Income"
+                class="form-select me-2"
+                id="validationCustom20"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Less than $10,000</option>
+                <option value="2">$10,000 to less than $15,000</option>
+                <option value="3">$15,000 to less than $20,000</option>
+                <option value="4">$20,000 to less than $25,000</option>
+                <option value="5">$25,000 to less than $35,000</option>
+                <option value="6">$35,000 to less than $50,000</option>
+                <option value="7">$50,000 to less than $75,000</option>
+                <option value="8">$75,000 or more</option>
+              </select>
+              <div class="invalid-feedback">
+                Please indicate your total household income.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center my-4">
+          <!-- <button class="btn btn-primary col-4" type="submit">Make prediction</button> -->
+          <button
+            id="makePredictButton"
+            class="btn btn-warning col-4"
+            type="submit"
+          >
+            <span
+              class="spinner-border spinner-border-sm visually-hidden"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            <span>Make prediction</span>
+          </button>
+        </div>
+      </form>
 
-        <div class="toast show bg-dark position-relative top-50 start-50 translate-middle-x" role="alert"
-            aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <!-- <img src="..." class="rounded me-2" alt="..."> -->
-                <strong class="me-auto">Model</strong>
-                <small>🧠</small>
-            </div>
-            <div id="predictionOutput" class="toast-body text-light">
-                Waiting for input ...
-            </div>
+      <div
+        class="toast show bg-dark position-relative top-50 start-50 translate-middle-x"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <!-- <img src="..." class="rounded me-2" alt="..."> -->
+          <strong class="me-auto">Model</strong>
+          <small>🧠</small>
         </div>
+        <div id="predictionOutput" class="toast-body text-light">
+          Waiting for input ...
+        </div>
+      </div>
     </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
+      </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

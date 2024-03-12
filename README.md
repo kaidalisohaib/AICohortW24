@@ -1,31 +1,38 @@
 # Heart Disease Prediction
 
 ## Project Overview
+
 This project aims to predict heart disease using various health indicators. Early detection can potentially save lives. We are a team of 4 AI enthusiasts participating in the AI LAUNCH LAB R&D Programs of Winter 2024.
 
 ## Team Members
+
 - Sohaib Kaidali
-- Anton 
-- Radman 
-- Agam 
+- Anton
+- Radman
+- Agam
 
 ## Problem Statement
+
 Heart disease is the leading cause of death globally. Early detection can potentially save lives. We aim to build a machine learning model that can predict the likelihood of heart disease based on various health indicators, contributing to improved healthcare outcomes.
 
 ## Project Workflow
 
 ### Step 1: Data Collection and Preprocessing
+
 1. **Collect Data**
+
    - [x] Download the dataset from Kaggle.
-   - [X] Explore the dataset to understand its structure and features.
-   - [X] Check for missing values and handle them appropriately.
+   - [x] Explore the dataset to understand its structure and features.
+   - [x] Check for missing values and handle them appropriately.
 
 2. **Data Preprocessing**
    - [x] Normalize or scale numerical features.
    - [x] Split the dataset into training and testing sets.
 
 ### Step 2: Exploratory Data Analysis (EDA)
+
 1. **Visualize Data**
+
    - [x] Create histograms, scatter plots, and box plots to explore the distribution of features.
    - [x] Generate correlation matrices to identify relationships between variables.
    - [x] Analyze trends and patterns in the data.
@@ -35,7 +42,9 @@ Heart disease is the leading cause of death globally. Early detection can potent
    - [x] Perform dimensionality reduction if necessary.
 
 ### Step 3: Model Building and Evaluation
+
 1. **Model Selection**
+
    - [x] Choose appropriate machine learning algorithms for the task.
    - [x] Train baseline models with default parameters.
 
@@ -44,18 +53,21 @@ Heart disease is the leading cause of death globally. Early detection can potent
    - [ ] Tune hyperparameters to improve model performance.
 
 ### Step 4: Model Deployment and Documentation
+
 1. **Deploy Model**
-   - [ ] Deploy the trained model to a web service or application.
+
+   - [x] Deploy the trained model to a web service or application.
 
 2. **Documentation**
    - [ ] Document the project's methodology, findings, and conclusions in a report.
    - [x] Write README files with instructions for running the code and reproducing results.
-   - [ ] Create API documentation if applicable.
 
 ## Dataset
+
 The dataset used in this project is sourced from Kaggle and can be found [here](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset/data). It contains 253,680 records and 21 features.
 
 ### Features description
+
 - HighBP : Indicates if the person has been told by a health professional that they have High Blood Pressure.
 - HighChol : Indicates if the person has been told by a health professional that they have High Blood Cholesterol.
 - CholCheck : Cholesterol Check, if the person has their cholesterol levels checked within the last 5 years.
@@ -79,7 +91,9 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
 - Income : Indicates the total household income, ranging from 1 (at least \$10,000) to 6 ($75,000+)
 
 ## Getting Started
+
 ### Google Colab Workflow
+
 1. **Open Google Colab:**
    - Go to Google Colab and sign in with your Google account if you haven't already.
 2. **Open a Notebook from GitHub:**
@@ -100,10 +114,11 @@ The dataset used in this project is sourced from Kaggle and can be found [here](
    - Go to your GitHub repository to verify that the changes have been saved successfully.
 
 ### Local Workflow
+
 1. **Setup Environment:**
    - Make sure to use [Python 3.10.1](https://www.python.org/downloads/release/python-3101/).
    - Configure a Python environment:
-   Run each command, one after the other.
+     Run each command, one after the other.
      ```bash
      python -m venv venv
      ```

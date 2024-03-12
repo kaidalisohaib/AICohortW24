@@ -1,326 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ONNX Runtime JavaScript Examples</title>
     <!-- <script type="module" src="website-related/js-css/prediction.js"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="website-related/js-css/styles.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="website-related/js-css/styles.css" />
+  </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="100">
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar-example2"
+    data-bs-offset="100"
+  >
     <header>
-        <div class="container">
-            <h1>Project Report: Predicting Heart Disease with Machine Learning</h1>
-            <h2>
-                <a class="badge bg-danger link-light" href="website-related/demo.html">Try the Demo!</a>
-            </h2>
-        </div>
+      <div class="container">
+        <h1>Project Report: Predicting Heart Disease with Machine Learning</h1>
+        <h2>
+          <a class="badge bg-danger link-light" href="website-related/demo.html"
+            >Try the Demo!</a
+          >
+        </h2>
+      </div>
     </header>
     <main class="container shadow rounded">
-        <div class="row">
+      <div class="row">
+        <nav
+          id="navbar-example2"
+          class="d-none d-md-block col-3 navbar flex-column align-items-stretch pe-4 border-end sticky-nav"
+        >
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#item-0">Our Journey</a>
+            <a class="nav-link" href="#item-1"
+              >Step 1: Data Acquisition and Preparation</a
+            >
+            <a class="nav-link" href="#item-2"
+              >Step 2: Understanding the Problem and Tools</a
+            >
+            <a class="nav-link" href="#item-3"
+              >Step 3: Building and Training our Model</a
+            >
+            <a class="nav-link" href="#item-4"
+              >Step 4: Evaluation and Refinement</a
+            >
+            <a class="nav-link" href="#item-5"
+              >Step 5: Ethical Considerations</a
+            >
+            <a class="nav-link" href="#item-6"
+              >Step 6: Conclusion and Future Steps</a
+            >
+          </nav>
+        </nav>
+        <div class="col-9 container">
+          <section>
+            <h2 id="item-0">Our Journey:</h2>
+            <hr />
+            <p>
+              Our team, a mix of curious minds from Vanier College, embarked on
+              a remarkable adventure: using AI to fight against the ever-present
+              threat of heart disease. While one teammate brought some
+              experience with Python and a taste of the exciting world of AI,
+              the rest of us - two science enthusiasts, one specializing in
+              health sciences, and another diving into computer science and
+              mathematics - were driven by a powerful combination of curiosity
+              and the desire to learn and contribute through teamwork.
+            </p>
+            <p>
+              We were all eager to explore this uncharted territory, excited to
+              understand how AI could be used for good, and passionate about
+              leaving a positive impact on the world.
+            </p>
+          </section>
 
-            <nav id="navbar-example2" class="d-none d-md-block col-3 navbar flex-column align-items-stretch pe-4 border-end sticky-nav">
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link" href="#item-0">Our Journey</a>
-                    <a class="nav-link" href="#item-1">Step 1: Data Acquisition and Preparation</a>
-                    <a class="nav-link" href="#item-2">Step 2: Understanding the Problem and Tools</a>
-                    <a class="nav-link" href="#item-3">Step 3: Building and Training our Model</a>
-                    <a class="nav-link" href="#item-4">Step 4: Evaluation and Refinement</a>
-                    <a class="nav-link" href="#item-5">Step 5: Ethical Considerations</a>
-                    <a class="nav-link" href="#item-6">Step 6: Conclusion and Future Steps</a>
-                </nav>
-            </nav>
-            <div class="col-9 container">
+          <section>
+            <h2 id="item-1">Step 1: Data Acquisition and Preparation</h2>
+            <hr />
+            <p>
+              Our first mission on this AI adventure was to hunt down some data.
+              We scoured the web, places like Kaggle, for publicly available
+              datasets related to healthcare or finance. The goal? Find the
+              building blocks for our machine learning model.
+            </p>
+            <p>
+              But, the data gods smiled upon us! As we were digging, we stumbled
+              upon a goldmine: a dataset specifically focused on heart disease
+              patients. Even better, this dataset was already prepped and
+              polished - minimal cleaning needed! Unlike other datasets we'd
+              seen, this one was free of missing pieces, inconsistencies, or
+              formatting headaches. No wrestling with messy data for us! This
+              lucky find meant we could skip the data cleaning grind and head
+              straight into understanding the dataset and building our cool
+              model.
+            </p>
+          </section>
 
-                <section>
-                    <h2 id="item-0">Our Journey:</h2>
-                    <hr>
-                    <p>
-                        Our team, a mix of curious minds from Vanier College, embarked on a remarkable adventure:
-                        using
-                        AI to
-                        fight
-                        against the ever-present threat of heart disease. While one teammate brought some experience
-                        with Python
-                        and a
-                        taste of the exciting world of AI, the rest of us - two science enthusiasts, one
-                        specializing in
-                        health
-                        sciences, and another diving into computer science and mathematics - were driven by a
-                        powerful
-                        combination of
-                        curiosity and the desire to learn and contribute through teamwork.
-                    </p>
-                    <p>
-                        We were all eager to explore this uncharted territory, excited to understand how AI could be
-                        used for
-                        good, and
-                        passionate about leaving a positive impact on the world.
-                    </p>
-                </section>
+          <section>
+            <h2 id="item-2">Step 2: Understanding the Problem and Tools</h2>
+            <hr />
+            <h3>Heart Disease: A Global Foe</h3>
+            <hr />
 
-                <section>
-                    <h2 id="item-1">Step 1: Data Acquisition and Preparation</h2>
-                    <hr>
-                    <p>
-                        Our first mission on this AI adventure was to hunt down some data. We scoured the web,
-                        places
-                        like
-                        Kaggle, for
-                        publicly available datasets related to healthcare or finance. The goal? Find the building
-                        blocks
-                        for our
-                        machine
-                        learning model.
-                    </p>
-                    <p>
-                        But, the data gods smiled upon us! As we were digging, we stumbled upon a goldmine: a
-                        dataset
-                        specifically
-                        focused on heart disease patients. Even better, this dataset was already prepped and
-                        polished -
-                        minimal
-                        cleaning
-                        needed! Unlike other datasets we'd seen, this one was free of missing pieces,
-                        inconsistencies,
-                        or
-                        formatting
-                        headaches. No wrestling with messy data for us! This lucky find meant we could skip the data
-                        cleaning
-                        grind and
-                        head straight into understanding the dataset and building our cool model.
-                    </p>
-                </section>
+            <p>
+              Our journey began by taking a deep dive into the heartbreaking
+              impact of heart disease worldwide. We learned about its alarmingly
+              high prevalence, the risk factors that contribute to it, and the
+              immense burden it places on individuals, families, and healthcare
+              systems. This understanding fueled our passion to explore the
+              potential of Artificial Intelligence (AI) and Machine Learning
+              (ML) in tackling this critical issue.
+            </p>
 
-                <section>
-                    <h2 id="item-2">Step 2: Understanding the Problem and Tools</h2>
-                    <hr>
-                    <h3>Heart Disease: A Global Foe</h3>
-                    <hr>
+            <h3>Leveling Up Our Skills</h3>
+            <hr />
 
-                    <p>
-                        Our journey began by taking a deep dive into the heartbreaking impact of heart disease
-                        worldwide. We
-                        learned
-                        about its alarmingly high prevalence, the risk factors that contribute to it, and the
-                        immense
-                        burden it
-                        places
-                        on individuals, families, and healthcare systems. This understanding fueled our passion to
-                        explore the
-                        potential
-                        of Artificial Intelligence (AI) and Machine Learning (ML) in tackling this critical issue.
-                    </p>
+            <p>
+              Our team was a diverse mix of individuals with varying levels of
+              experience in AI and programming. Recognizing this, I, with my
+              prior knowledge, took on the role of a supportive guide to
+              facilitate the learning process for everyone. I directed the team
+              towards a series of engaging video tutorials covering the
+              essentials: Python programming, scikit-learn, and Git & GitHub
+              Desktop. These resources served a dual purpose: providing a solid
+              foundation in these crucial topics and equipping us with the
+              necessary tools for seamless collaboration and efficient version
+              control.
+            </p>
 
-                    <h3>Leveling Up Our Skills</h3>
-                    <hr>
+            <h3>Delving Deep into the Data</h3>
+            <hr />
 
-                    <p>
-                        Our team was a diverse mix of individuals with varying levels of experience in AI and
-                        programming.
-                        Recognizing
-                        this, I, with my prior knowledge, took on the role of a supportive guide to facilitate the
-                        learning
-                        process
-                        for
-                        everyone. I directed the team towards a series of engaging video tutorials covering the
-                        essentials:
-                        Python
-                        programming, scikit-learn, and Git & GitHub Desktop. These resources served a dual purpose:
-                        providing a
-                        solid
-                        foundation in these crucial topics and equipping us with the necessary tools for seamless
-                        collaboration
-                        and
-                        efficient version control.
-                    </p>
+            <p>
+              To further unravel the mysteries within the dataset, we actively
+              participated in our AI cohort workshop sessions. Through
+              interactive exercises and thought-provoking discussions, we gained
+              valuable insights into data visualization techniques, descriptive
+              statistics, and pattern identification. These exploratory
+              endeavors allowed us to peel back the layers of the dataset,
+              laying a strong foundation for the analysis and model development
+              stages that lay ahead.
+            </p>
+            <div
+              id="carouselExampleDark"
+              class="carousel carousel-dark slide"
+              data-bs-ride="carousel"
+              data-bs-interval="false"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img
+                    src="website-related/assets/features_count.png"
+                    class="img-fluid"
+                    alt="Count of feature values"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Count of feature values</h5>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img
+                    src="website-related/assets/Correlation_matrix.png"
+                    class="img-fluid"
+                    alt="Correlation matrix of features"
+                  />
 
-                    <h3>Delving Deep into the Data</h3>
-                    <hr>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Correlation matrix of features</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="website-related/assets/features_distribution.png"
+                    class="img-fluid"
+                    alt="Distribution of feature values"
+                  />
 
-                    <p>
-                        To further unravel the mysteries within the dataset, we actively participated in our AI
-                        cohort
-                        workshop
-                        sessions. Through interactive exercises and thought-provoking discussions, we gained
-                        valuable
-                        insights
-                        into
-                        data
-                        visualization techniques, descriptive statistics, and pattern identification. These
-                        exploratory
-                        endeavors
-                        allowed us to peel back the layers of the dataset, laying a strong foundation for the
-                        analysis
-                        and model
-                        development stages that lay ahead.
-                    </p>
-
-                    <h3>Unveiling a Bias</h3>
-                    <hr>
-
-                    <p>
-                        However, during our data exploration, we stumbled upon a critical challenge: the dataset
-                        exhibited class
-                        imbalance. This means that for our binary classification problem (predicting the presence or
-                        absence of
-                        heart
-                        disease), a whopping 90% of the data belonged to the "no heart disease" class (target value
-                        of
-                        0.0),
-                        while
-                        only
-                        10% belonged to the "heart disease" class (target value of 1.0). This uneven distribution
-                        presented a
-                        potential
-                        roadblock, as our model might perform less effectively in identifying positive cases (heart
-                        disease) due
-                        to
-                        its
-                        overexposure to negative examples. Recognizing this bias early on allowed us to strategize
-                        mitigation
-                        techniques
-                        and ensure a more robust and reliable model.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 id="item-3">Step 3: Building and Training our Model</h2>
-                    <hr>
-
-                    In our quest to build a model for predicting heart disease, we embarked on a thrilling journey
-                    through the intricate world of machine learning. Here's a closer look at the steps we took:
-
-                    <h3>Exploring Machine Learning Algorithms</h3>
-                    <hr>
-                    <p>
-                        We delved into a diverse arsenal of machine learning
-                        algorithms, each offering unique strengths. Logistic Regression and Random Forest were our top
-                        contenders in the battle to accurately predict the presence of heart disease.
-                    </p>
-
-
-                    <h3>Model Training</h3>
-                    <hr>
-                    <p>
-                        With our chosen algorithms in hand, we proceeded to train them. This crucial step
-                        involved feeding our meticulously prepared data into the models, enabling them to discern and
-                        learn
-                        the intricate relationships between various factors and the presence of heart disease.
-                    </p>
-
-
-                    <h3>Iterative Experimentation</h3>
-                    <hr>
-                    <p>
-                        Our approach wasn't static, but rather an iterative dance. We
-                        experimented with different parameters, fine-tuning our models to achieve optimal performance.
-                        This
-                        involved adjusting hyperparameters, exploring feature engineering techniques like Polynomial
-                        Features, and meticulously assessing the impact on model efficacy.
-                    </p>
-
-
-                    <h3>Evaluation Metrics</h3>
-                    <hr>
-                    <p>
-                        As responsible data scientists, we understood the importance of robust
-                        evaluation metrics. Beyond traditional accuracy measures, we delved into metrics like precision,
-                        recall, and balanced accuracy to gain deeper insights into our model's performance.
-                    </p>
-
-                    <h3>Visualization and Interpretation</h3>
-                    <hr>
-                    <p>
-                        Visualizing the model's performance and interpreting its
-                        predictions were integral parts of our process. We constructed Precision-Recall curves to
-                        evaluate
-                        the trade-off between precision and recall and gain insights into model behavior across
-                        different
-                        thresholds.
-                    </p>
-
-                    <h3>Model Selection</h3>
-                    <hr>
-                    <p>
-                        After a thorough evaluation and comparison, we identified the most promising models
-                        for further analysis. Our selection criteria were based on a holistic assessment, considering
-                        not
-                        only accuracy but also recall, precision, and the area under the Precision-Recall curve (PR
-                        AUC).
-                    </p>
-
-                    <h3>Saving the Models</h3>
-                    <hr>
-                    <p>
-                        Recognizing the importance of reproducibility and scalability, we saved our
-                        trained models in the ONNX format. This format ensures compatibility across different platforms
-                        and
-                        environments, facilitating seamless integration into real-world applications.
-                    </p>
-                </section>
-                <strong>### STOPPED HERE, NEED TO CONTINUE EXPLAINING</strong>
-
-                <section>
-                    <h2 id="item-4">Step 4: Evaluation and Refinement</h2>
-                    <hr>
-
-                    Like mastering any skill, building an ML model requires evaluation and refinement. We used
-                    metrics
-                    like
-                    accuracy, precision, and recall to assess our model's performance. Iteratively refining the
-                    model
-                    involved
-                    tweaking parameters, adjusting pre-processing techniques, and exploring alternative algorithms.
-                </section>
-
-                <section >
-                    <h2 id="item-5">Step 5: Ethical Considerations</h2>
-                    <hr>
-
-                    As our understanding of AI deepened, so did our awareness of ethical considerations. We learned
-                    about the
-                    potential biases embedded in data and algorithms, leading to unfair results. To address this, we
-                    carefully
-                    selected our initial data source and implemented bias mitigation techniques during model
-                    training.
-                    Transparency
-                    and continuous monitoring were emphasized to ensure fairness and responsibility.
-                </section>
-
-                <section>
-                    <h2 id="item-6">Step 6: Conclusion and Future Steps</h2>
-                    <hr>
-
-                    This project has been a profound learning experience. We transitioned from novices to proficient
-                    users of
-                    Python, scikit-learn, and ML concepts. More importantly, we recognized the transformative
-                    potential
-                    of AI in
-                    healthcare and the importance of responsible development. Moving forward, we are eager to
-                    explore
-                    advanced
-                    AI
-                    techniques, delve deeper into healthcare data analysis, and advocate for ethical AI solutions to
-                    benefit
-                    society.
-                    TEST CHANGE
-                </section>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Distribution of feature values</h5>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
+
+            <h3>Unveiling a Bias</h3>
+            <hr />
+            <p>
+              However, during our data exploration, we stumbled upon a critical
+              challenge: the dataset exhibited class imbalance. This means that
+              for our binary classification problem (predicting the presence or
+              absence of heart disease), a whopping 90% of the data belonged to
+              the "no heart disease" class (target value of 0.0), while only 10%
+              belonged to the "heart disease" class (target value of 1.0). This
+              uneven distribution presented a potential roadblock, as our model
+              might perform less effectively in identifying positive cases
+              (heart disease) due to its overexposure to negative examples.
+              Recognizing this bias early on allowed us to strategize mitigation
+              techniques and ensure a more robust and reliable model.
+            </p>
+            <small class="d-block text-center"
+              >Distribution of rows with and without heart disease</small
+            >
+            <img
+              src="website-related/assets/Dataset_target_distribution.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="Distribution of rows with and without heart disease"
+            />
+          </section>
+
+          <section>
+            <h2 id="item-3">Step 3: Building and Training our Model</h2>
+            <hr />
+
+            In our pursuit of developing an effective model for predicting heart
+            disease, we embarked on an exciting journey through the realm of
+            machine learning algorithms and techniques. Here's a detailed
+            account of our approach:
+
+            <h3>Exploring Machine Learning Algorithms</h3>
+            <hr />
+            <p>
+              We delved into a diverse array of machine learning algorithms,
+              each offering unique strengths and capabilities. Two algorithms
+              emerged as our top contenders: Logistic Regression and Random
+              Forest. Logistic Regression, a classical and interpretable
+              algorithm, provided a solid baseline, while Random Forest, an
+              ensemble method, promised enhanced predictive power and
+              robustness.
+            </p>
+
+            <h3>Model Training</h3>
+            <hr />
+            <p>
+              With our chosen algorithms in hand, we proceeded to train them on
+              our carefully prepared dataset. This crucial step involved feeding
+              the data into the models, enabling them to discern and learn the
+              intricate relationships between various features and the presence
+              of heart disease. We employed techniques like cross-validation and
+              grid search to optimize hyperparameters, ensuring our models were
+              well-tuned for the task at hand.
+            </p>
+
+            <h3>Iterative Experimentation</h3>
+            <hr />
+            <p>
+              Our approach wasn't static; instead, it was an iterative dance of
+              exploration and refinement. We experimented with different
+              techniques, such as feature engineering, polynomial features, and
+              resampling methods like SMOTE and ADASYN, to address the class
+              imbalance present in our dataset. This iterative process allowed
+              us to assess the impact of each technique on model efficacy and
+              make informed decisions about which approaches to pursue further.
+            </p>
+
+            <h3>Evaluation Metrics</h3>
+            <hr />
+            <p>
+              As responsible data scientists, we understood the importance of
+              robust evaluation metrics. Beyond traditional accuracy measures,
+              we delved into metrics like precision, recall, and balanced
+              accuracy to gain deeper insights into our models' performance. The
+              Precision-Recall (PR) curve and the area under the PR curve (PR
+              AUC) emerged as particularly valuable tools for assessing model
+              performance in our imbalanced dataset scenario.
+            </p>
+            <small class="d-block text-center"
+              >Precision-Recall curve of top models</small
+            >
+            <img
+              src="website-related/assets/precision_recall_curve.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="Precision-Recall curve of top models"
+            />
+            <h3>Visualization and Interpretation</h3>
+            <hr />
+            <p>
+              Visualizing and interpreting our models' predictions played a
+              pivotal role in our process. We constructed Precision-Recall
+              curves to evaluate the trade-off between precision and recall
+              across different thresholds, gaining valuable insights into model
+              behavior. Additionally, we employed techniques like SHAP (SHapley
+              Additive exPlanations) to understand the relative importance of
+              different features in our models' predictions, fostering
+              interpretability and transparency.
+            </p>
+
+            <h3>Model Selection</h3>
+            <hr />
+            <p>
+              After a thorough evaluation and comparison, we identified the most
+              promising models for further analysis. Our selection criteria were
+              based on a holistic assessment, considering not only accuracy but
+              also recall, precision, and the area under the Precision-Recall
+              curve (PR AUC). This comprehensive approach ensured that we
+              selected models that strike a balance between effectively
+              detecting positive cases (high recall) and providing reliable
+              positive predictions (high precision).
+            </p>
+
+            <h3>Saving the Models</h3>
+            <hr />
+            <p>
+              Recognizing the importance of reproducibility and scalability, we
+              saved our trained models in the ONNX format. This format ensures
+              compatibility across different platforms and environments,
+              facilitating seamless integration into real-world applications and
+              enabling efficient deployment and inference.
+            </p>
+            <small class="d-block text-center"
+              >All ONNX model files with their sizes</small
+            >
+            <img
+              src="website-related/assets/all_models.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="All ONNX model files with their sizes"
+            />
+            <p>
+              Through this rigorous process of exploration, experimentation, and
+              evaluation, we gained invaluable insights into the strengths and
+              limitations of various machine learning algorithms and techniques
+              within the context of our heart disease prediction challenge.
+            </p>
+          </section>
+          <section>
+            <h2 id="item-4">Step 4: Evaluation and Refinement</h2>
+            <hr />
+            <p>
+              Evaluating and refining machine learning models is a crucial step
+              in ensuring their effectiveness and reliability. In this project,
+              we employed various evaluation metrics and techniques to assess
+              and improve our models' performance.
+            </p>
+
+            <h3>Evaluation Metrics</h3>
+            <hr />
+            <p>
+              We utilized a diverse set of evaluation metrics to gain a
+              comprehensive understanding of our models' performance:
+            </p>
+
+            <ol>
+              <li>
+                <strong>Accuracy</strong>: Accuracy measures the overall
+                proportion of correctly classified instances, providing a
+                general overview of model performance.
+              </li>
+              <li>
+                <strong>Precision</strong>: Precision quantifies the proportion
+                of true positive instances among all instances predicted as
+                positive. In our context, it measures the reliability of
+                positive predictions (presence of heart disease).
+              </li>
+              <li>
+                <strong>Recall</strong>: Recall, also known as sensitivity,
+                measures the proportion of actual positive instances that were
+                correctly identified by the model. It indicates the model's
+                ability to detect all positive cases, a crucial aspect in
+                healthcare applications.
+              </li>
+              <li>
+                <strong
+                  >Precision-Recall Curve and Average Precision Score (PR
+                  AUC)</strong
+                >: The precision-recall curve provides a comprehensive view of
+                the trade-off between precision and recall at various threshold
+                settings. The area under this curve (PR AUC) is a valuable
+                metric for evaluating models, especially in imbalanced datasets
+                like ours, as it considers both precision and recall.
+              </li>
+              <li>
+                <strong>Balanced Accuracy Score</strong>: This metric adjusts
+                for class imbalance by calculating the average of recall scores
+                for each class. It provides a more reliable performance measure
+                when dealing with skewed class distributions, ensuring that the
+                model's performance is not skewed towards the majority class.
+              </li>
+            </ol>
+            <small class="d-block text-center"
+              >Accuracy, recall, F1-score, PR-AUC, and balanced accuracy for
+              each model</small
+            >
+            <img
+              src="website-related/assets/all_models_metrics.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="Accuracy, recall, F1-score, PR-AUC, and balanced accuracy for each model"
+            />
+            <p>
+              By considering these diverse metrics, we gained a holistic
+              understanding of our models' performance, enabling us to make
+              informed decisions during the refinement process.
+            </p>
+
+            <h3>Model Refinement Techniques</h3>
+            <hr />
+            <p>
+              To improve our models' performance, we employed several refinement
+              techniques:
+            </p>
+
+            <ol>
+              <li>
+                <strong>Feature Engineering</strong>: We explored various
+                feature engineering approaches, including polynomial features,
+                to capture non-linear relationships and enhance the predictive
+                power of our models.
+              </li>
+              <li>
+                <strong>Hyperparameter Tuning</strong>: We utilized techniques
+                like grid search and cross-validation to systematically tune the
+                hyperparameters of our models, such as regularization parameters
+                for logistic regression and tree-based hyperparameters for
+                random forests.
+              </li>
+              <li>
+                <strong>Ensemble Methods</strong>: For the random forest models,
+                we experimented with ensemble techniques that combine multiple
+                weak learners to create a stronger and more robust model.
+              </li>
+              <li>
+                <strong>Class Imbalance Mitigation</strong>: To address the
+                class imbalance in our dataset, we employed techniques like
+                oversampling (SMOTE, ADASYN) and undersampling (Random
+                Undersampler, TomekLinks, Edited Nearest Neighbours). These
+                methods helped balance the class distributions and improve model
+                performance on the minority class (presence of heart disease).
+              </li>
+            </ol>
+            <p>
+              The model refinement process was iterative, involving multiple
+              cycles of evaluation, parameter adjustments, and technique
+              exploration. We continuously monitored the evaluation metrics and
+              used them as guidance to refine our models further.
+            </p>
+
+            <h3>Visualizations and Interpretability</h3>
+            <hr />
+            <p>
+              In addition to the evaluation metrics, we relied on various
+              visualizations to gain insights into our models' performance and
+              behavior:
+            </p>
+            <ol>
+              <li>
+                <strong>Precision-Recall Curves</strong>: We plotted
+                precision-recall curves for our top-performing models, allowing
+                us to visually assess the trade-off between precision and recall
+                at different thresholds.
+              </li>
+              <li>
+                <strong>Confusion Matrices</strong>: Confusion matrices provided
+                a clear representation of the models' predictions, highlighting
+                the distribution of true positives, true negatives, false
+                positives, and false negatives.
+              </li>
+              <small class="d-block text-center"
+                >Confusion matrices of all models with sampling
+                techniques</small
+              >
+              <img
+                src="website-related/assets/all_models_confusion_matrix.png"
+                class="img-fluid position-relative top-50 start-50 translate-middle-x"
+                alt="Confusion matrices of all models with sampling techniques"
+              />
+              <li>
+                <strong>Feature Importance Plots</strong>: To understand the
+                relative importance of different features in our models'
+                predictions, we utilized techniques like SHAP (SHapley Additive
+                exPlanations) and feature importance plots for tree-based
+                models.
+              </li>
+            </ol>
+            <small class="d-block text-center"
+              >SHAP violin plot showing feature impact on model output</small
+            >
+            <img
+              src="website-related/assets/SHAP_violin.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="SHAP violin plot showing feature impact on model output"
+            />
+            <p>
+              These visualizations not only aided in model evaluation and
+              selection but also facilitated interpretability, a crucial aspect
+              in sensitive domains like healthcare.
+            </p>
+            <small class="d-block text-center"
+              >SHAP bar plot showing feature importance difference between
+              genders</small
+            >
+            <img
+              src="website-related/assets/SHAP_bar_gender_diff.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="SHAP bar plot showing feature importance difference between genders"
+            />
+            <small class="d-block text-center"
+              >SHAP decision plot for 20 rows with the 10 most and least
+              important features</small
+            >
+            <img
+              src="website-related/assets/SHAP_decision_features.png"
+              class="img-fluid position-relative top-50 start-50 translate-middle-x"
+              alt="SHAP decision plot for 20 rows with the 10 most and least important features"
+            />
+
+            <h3>Best Model Selection</h3>
+            <hr />
+            <p>
+              After thorough evaluation and refinement, we selected the
+              best-performing model(s) based on a comprehensive analysis of the
+              evaluation metrics. While PR AUC served as a guiding metric, we
+              also considered balanced accuracy, recall, and precision to ensure
+              a well-rounded assessment.
+            </p>
+            <p>
+              The final model selection involved careful consideration of the
+              trade-offs between different metrics and the specific requirements
+              of our problem domain. Ultimately, we aimed to strike a balance
+              between effective detection of positive cases (high recall) and
+              reliable positive predictions (high precision), while maintaining
+              overall robustness and generalization capabilities.
+            </p>
+            <p>
+              Throughout the evaluation and refinement process, we encountered
+              several challenges and limitations. Computational resource
+              constraints and inherent limitations of certain algorithms
+              required us to make strategic decisions and trade-offs.
+              Additionally, we recognized the potential for biases in the
+              dataset and the importance of continuous monitoring and
+              responsible deployment of our models.
+            </p>
+            <p>
+              By iteratively evaluating, refining, and interpreting our models,
+              we not only improved their performance but also gained a deeper
+              understanding of the underlying patterns and relationships within
+              the data. This knowledge will be invaluable as we continue to
+              explore and develop AI solutions for addressing critical
+              healthcare challenges.
+            </p>
+          </section>
+
+          <section>
+            <h2 id="item-5">Step 5: Ethical Considerations</h2>
+            <hr />
+            <p>
+              Ethical considerations play a crucial role in the development and
+              deployment of machine learning models, especially in sensitive
+              domains like healthcare. In the context of our heart disease
+              prediction model, we must carefully navigate potential ethical
+              risks and implement appropriate mitigation strategies to ensure
+              responsible and trustworthy AI.
+            </p>
+            <p>
+              One aspect of our project that may pose ethical risks is the
+              potential for biased or discriminatory predictions. Given the
+              complexity and multifaceted nature of heart disease, our model's
+              predictions could be influenced by factors beyond the health
+              indicators included in our dataset. For instance, socioeconomic
+              status, access to healthcare, and environmental factors may
+              indirectly contribute to an individual's risk of heart disease,
+              but these factors may not be adequately captured or represented in
+              our dataset.
+            </p>
+            To mitigate this risk, we would implement the following strategies:
+
+            <ol>
+              <li>
+                <strong>Data Collection and Representation</strong>: We would
+                strive to obtain a diverse and representative dataset that
+                captures a wide range of demographics, socioeconomic
+                backgrounds, and environmental factors. This would involve
+                collaborating with healthcare providers, community
+                organizations, and experts to ensure that our data collection
+                process is inclusive and minimizes potential biases.
+              </li>
+              <li>
+                <strong>Algorithmic Fairness</strong>: We would incorporate
+                algorithmic fairness techniques into our model development
+                process. This may involve techniques such as adversarial
+                debiasing, which aims to remove sensitive attributes (e.g.,
+                race, gender, socioeconomic status) from the model's
+                decision-making process, or constrained optimization approaches
+                that explicitly incorporate fairness constraints during
+                training.
+              </li>
+              <li>
+                <strong>Interpretability and Explainability</strong>: We would
+                prioritize the development of interpretable and explainable
+                models, which can provide insights into the reasoning behind the
+                model's predictions. Techniques like SHAP (SHapley Additive
+                exPlanations) and feature importance analysis would enable us to
+                identify and scrutinize any potential biases or unfair patterns
+                in the model's decision-making process.
+              </li>
+              <li>
+                <strong>Human Oversight and Accountability</strong>: While our
+                model can assist in risk assessment and decision support, we
+                would emphasize that it should not be treated as a standalone
+                diagnostic tool. Human oversight and expert interpretation would
+                be essential, particularly in high-stakes scenarios. We would
+                establish clear guidelines and protocols for model usage,
+                ensuring that healthcare professionals maintain ultimate
+                responsibility for patient care decisions.
+              </li>
+              <li>
+                <strong>Continuous Monitoring and Feedback</strong>: We would
+                implement a continuous monitoring and feedback system to track
+                the model's performance and potential biases in real-world
+                deployments. This would involve collecting feedback from
+                healthcare professionals, patients, and other stakeholders, and
+                using this information to refine and update the model
+                iteratively.
+              </li>
+              <li>
+                <strong>Ethical Guidelines and Governance</strong>: We would
+                establish a set of ethical guidelines and a governance framework
+                to guide the responsible development and deployment of our
+                model. This would involve collaborating with experts in
+                bioethics, healthcare, and AI ethics to ensure that our
+                practices align with established principles and best practices.
+              </li>
+            </ol>
+            <p>
+              By proactively addressing ethical risks and implementing these
+              mitigation strategies, we can strive to develop a heart disease
+              prediction model that is not only accurate and effective but also
+              fair, transparent, and aligned with ethical principles.
+              Ultimately, our goal is to leverage the power of AI in a
+              responsible and trustworthy manner, contributing to improved
+              healthcare outcomes while upholding the highest standards of
+              ethical conduct.
+            </p>
+          </section>
+
+          <section>
+            <h2 id="item-6">Step 6: Conclusion and Future Steps</h2>
+            <hr />
+            <p>
+              Our journey in developing a machine learning model for predicting
+              heart disease has been a profound and enriching experience.
+              Through this project, we have gained invaluable knowledge and
+              skills in areas such as data analysis, model development, and
+              ethical AI practices.
+            </p>
+            <p>
+              Throughout the process, we encountered various challenges,
+              including data quality issues, class imbalance, and the potential
+              for biased predictions. However, by employing techniques like data
+              preprocessing, resampling, and algorithmic fairness approaches, we
+              were able to mitigate these challenges and develop a robust and
+              reliable model.
+            </p>
+            <p>
+              One of the key lessons we learned is the importance of considering
+              ethical implications at every stage of the model development
+              cycle. By proactively addressing ethical risks and implementing
+              strategies such as data representation, algorithmic fairness,
+              interpretability, human oversight, and continuous monitoring, we
+              aim to develop a model that not only accurately predicts heart
+              disease but also upholds ethical principles and promotes
+              trustworthiness.
+            </p>
+            Moving forward, we envision several exciting avenues for further
+            exploration and advancement:
+
+            <ol>
+              <li>
+                <strong>Expansion to Global Datasets</strong>: While our current
+                model is trained on data from a specific geographic region, we
+                plan to expand our data collection efforts to include diverse
+                and representative datasets from different countries and
+                cultures. This will enhance the model's generalizability and
+                ensure that it can effectively serve diverse populations
+                worldwide.
+              </li>
+              <li>
+                <strong>Integration of Additional Data Sources</strong>: As
+                healthcare technology continues to evolve, we anticipate the
+                availability of new and rich data sources, such as wearable
+                devices, electronic health records, and genomic data. By
+                integrating these additional data sources into our model, we can
+                potentially improve its predictive power and capture a more
+                comprehensive picture of an individual's health status.
+              </li>
+              <li>
+                <strong>Collaboration with Domain Experts</strong>: We recognize
+                the importance of interdisciplinary collaboration in tackling
+                complex healthcare challenges. By partnering with medical
+                professionals, healthcare providers, and experts in fields like
+                epidemiology and public health, we can gain deeper insights into
+                the nuances of heart disease and ensure that our model aligns
+                with clinical best practices.
+              </li>
+              <li>
+                <strong>Continuous Refinement and Adaptation</strong>: As new
+                scientific discoveries and medical advancements emerge, we must
+                remain vigilant in refining and adapting our model to
+                incorporate the latest knowledge and techniques. This iterative
+                process will ensure that our model remains relevant, accurate,
+                and aligned with the cutting edge of heart disease research and
+                prevention strategies.
+              </li>
+              <li>
+                <strong>Advocacy for Ethical AI in Healthcare</strong>: Beyond
+                the technical aspects of our project, we aim to contribute to
+                the broader discourse on ethical AI practices in healthcare. By
+                sharing our experiences, insights, and best practices, we hope
+                to raise awareness and promote the responsible development and
+                deployment of AI technologies in this critical domain.
+              </li>
+            </ol>
+            <p>
+              Our journey has been a testament to the transformative potential
+              of AI in healthcare, as well as the importance of addressing
+              ethical considerations from the outset. As we move forward, we
+              remain committed to leveraging the power of machine learning to
+              save lives, improve healthcare outcomes, and contribute to a more
+              equitable and sustainable future for all.
+            </p>
+          </section>
+          <h2>
+            <a
+              class="badge bg-danger link-light position-relative top-50 start-50 translate-middle-x"
+              href="website-related/demo.html"
+              >Try the Demo!</a
+            >
+          </h2>
         </div>
+      </div>
     </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Sohaib Kaidali. All rights reserved.</p>
+      </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-</body>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.querySelectorAll("img").forEach((imgObj) => {
+        imgObj.addEventListener("click", function () {
+          window.open(this.src, "_blank");
+        });
+      });
+    </script>
+  </body>
 </html>
