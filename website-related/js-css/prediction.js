@@ -2,7 +2,7 @@
 
 // Import ONNXRuntime Web from CDN
 import * as ort from "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/esm/ort.min.js";
-
+import { generateHealthAdvice, typeSentence } from "./fake-health-assistant.js";
 // Set wasm path override and number of threads
 ort.env.wasm.wasmPaths =
   "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/";
@@ -14,11 +14,12 @@ const modelUrl =
 
 // DOM elements
 const predictionOutput = document.getElementById("predictionOutput");
+const healthAdvisorOutput = document.getElementById("advice");
 const makePredictButton = document.getElementById("makePredictButton");
 const form = document.getElementById("predictionForm");
 
 // Data object to hold form field values
-const data = {};
+const userInputs = {};
 let isPredicting = false;
 
 // Add Bootstrap validation to all forms with '.needs-validation' class
@@ -59,40 +60,40 @@ form.addEventListener("submit", async (e) => {
   // Loop through all form fields and populate the data object
   for (const field of form.elements) {
     if (field.name && field.value) {
-      data[field.name] = field.value;
+      userInputs[field.name] = parseFloat(field.value);
     }
   }
 
   // Prepare the input array in the correct order
-  const orderedArray = [
-    data.HighBP,
-    data.HighChol,
-    data.CholCheck,
-    data.BMI,
-    data.Smoker,
-    data.Stroke,
-    data.Diabetes,
-    data.PhysActivity,
-    data.Fruits,
-    data.Veggies,
-    data.HvyAlcoholConsump,
-    data.AnyHealthcare,
-    data.NoDocbcCost,
-    data.GenHlth,
-    data.MentHlth,
-    data.PhysHlth,
-    data.DiffWalk,
-    data.Sex,
-    data.Age,
-    data.Education,
-    data.Income,
+  const featuresOrdered = [
+    userInputs.HighBP,
+    userInputs.HighChol,
+    userInputs.CholCheck,
+    userInputs.BMI,
+    userInputs.Smoker,
+    userInputs.Stroke,
+    userInputs.Diabetes,
+    userInputs.PhysActivity,
+    userInputs.Fruits,
+    userInputs.Veggies,
+    userInputs.HvyAlcoholConsump,
+    userInputs.AnyHealthcare,
+    userInputs.NoDocbcCost,
+    userInputs.GenHlth,
+    userInputs.MentHlth,
+    userInputs.PhysHlth,
+    userInputs.DiffWalk,
+    userInputs.Sex,
+    userInputs.Age,
+    userInputs.Education,
+    userInputs.Income,
   ];
 
   // console.log('Form Data:', data);
   // console.log('Form array:', orderedArray);
 
   // Make the prediction and display the result
-  let outputPercentage = await main(orderedArray);
+  let outputPercentage = await predict(featuresOrdered);
   outputPercentage = (outputPercentage * 100).toFixed(1);
 
   await new Promise((r) => setTimeout(r, 250));
@@ -100,16 +101,20 @@ form.addEventListener("submit", async (e) => {
   makePredictButton.children[0].classList.add("visually-hidden");
   makePredictButton.children[1].innerText = "Make prediction";
   predictionOutput.innerText = `Likelihood of Heart Disease: ${outputPercentage}%`;
+
+  const advice = generateHealthAdvice(userInputs)
+  await typeSentence(healthAdvisorOutput, advice, 5)
   isPredicting = false;
 });
 
 // Update prediction output on form input
 form.addEventListener("input", () => {
   predictionOutput.innerText = "Waiting for input ...";
+  healthAdvisorOutput.innerHTML = "";
 });
 
 // Function to make the prediction using the ONNX model
-async function main(featuresArray) {
+async function predict(featuresArray) {
   try {
     // Create a new session and load the ONNX model
     const session = await ort.InferenceSession.create(modelUrl);

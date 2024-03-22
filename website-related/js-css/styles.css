@@ -99,3 +99,48 @@ img {
 small {
   font-weight: bold;
 }
+
+#healthAdviceToast {
+  width: 90%;
+}
+
+#healthAdvice {
+  background-color: #1b1d20;
+  color: #daf390 !important;
+  border-radius: 10px;
+}
+
+#healthAdvice > span {
+  margin-right: 3px;
+}
+
+#healthAdvice hr {
+  border: none;
+  height: 2px;
+  background-color: #daf390 !important;
+  color: #daf390 !important;
+}
+
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1rem;
+  background-color: white;
+  margin-left: 8px;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
