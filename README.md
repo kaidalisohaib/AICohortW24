@@ -13,8 +13,8 @@ An end-to-end machine learning project that predicts the likelihood of heart dis
 **[➡️ Click here to try the interactive Heart Disease Predictor](https://kaidalisohaib.github.io/AICohortW24/website-related/demo.html)**
 
 
-![](./assets/home.png)
-![](./assets/demo.png)
+![](https://raw.githubusercontent.com/kaidalisohaib/AICohortW24/refs/heads/main/assets/home.png)
+![](https://raw.githubusercontent.com/kaidalisohaib/AICohortW24/refs/heads/main/assets/demo.png)
 
 ---
 
